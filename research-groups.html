@@ -1,0 +1,425 @@
+<!-- قسم مجموعات البحث - Sure In Bayane -->
+<section id="bayane-research-groups-section" dir="rtl" class="bayane-groups-wrapper">
+  <div class="bayane-groups-header">
+    <div>
+      <span class="bayane-badge">Private</span>
+      <h2>Sure In Bayane – Research Groups</h2>
+      <p id="bayane-active-group-subtitle">إدارة المجموعات البحثية ومراجعة الأبحاث قبل النشر</p>
+    </div>
+    <div class="bayane-actions-row">
+      <select id="bayane-group-select" aria-label="اختر مجموعة بحثية"></select>
+      <button id="bayane-new-group-btn" type="button">+ مجموعة جديدة</button>
+    </div>
+  </div>
+
+  <!-- إنشاء مجموعة جديدة -->
+  <form id="bayane-create-group-form" class="bayane-card bayane-hidden">
+    <h3>إنشاء مجموعة بحثية جديدة</h3>
+    <input id="bayane-group-title" type="text" placeholder="اسم المجموعة البحثية" required />
+    <textarea id="bayane-group-desc" placeholder="وصف مختصر للمجموعة أو محاور البحث"></textarea>
+    <div class="bayane-form-actions">
+      <button type="submit">حفظ المجموعة</button>
+      <button id="bayane-cancel-group-btn" type="button">إلغاء</button>
+    </div>
+  </form>
+
+  <!-- البطاقات الست الأساسية -->
+  <div class="bayane-grid-6" id="bayane-cards-grid">
+    <button type="button" class="bayane-feature-card" data-tab="members">
+      <span class="bayane-card-title">أعضاء بلا حد أقصى</span>
+      <span class="bayane-card-sub">دعوة وقبول الأعضاء</span>
+    </button>
+
+    <button type="button" class="bayane-feature-card" data-tab="discussions">
+      <span class="bayane-card-title">نقاش علمي</span>
+      <span class="bayane-card-sub">محادثات وتعليقات</span>
+    </button>
+
+    <button type="button" class="bayane-feature-card" data-tab="researches">
+      <span class="bayane-card-title">ملفات مشتركة</span>
+      <span class="bayane-card-sub">مراجع ووثائق البحث</span>
+    </button>
+
+    <button type="button" class="bayane-feature-card" data-tab="meetings">
+      <span class="bayane-card-title">اجتماعات</span>
+      <span class="bayane-card-sub">تنظيم مواعيد الفريق</span>
+    </button>
+
+    <button type="button" class="bayane-feature-card" data-tab="tasks">
+      <span class="bayane-card-title">مهام الفريق</span>
+      <span class="bayane-card-sub">توزيع وتتبع العمل</span>
+    </button>
+
+    <button type="button" class="bayane-feature-card" data-tab="logs">
+      <span class="bayane-card-title">سجل التعديلات</span>
+      <span class="bayane-card-sub">معرفة التغييرات والمساهمات</span>
+    </button>
+  </div>
+
+  <!-- لوحة المحتوى الديناميكية للبطاقة المختارة -->
+  <div id="bayane-tab-panel" class="bayane-card bayane-hidden">
+    <div class="bayane-panel-head">
+      <h3 id="bayane-panel-title"></h3>
+      <button id="bayane-close-panel-btn" type="button">إغلاق</button>
+    </div>
+    <div id="bayane-panel-body"></div>
+  </div>
+</section>
+
+<style>
+  .bayane-groups-wrapper {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 16px;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  .bayane-groups-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .bayane-badge {
+    display: inline-block;
+    background: #e6f7ed;
+    color: #15803d;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .bayane-actions-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .bayane-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  @media (min-width: 768px) {
+    .bayane-grid-6 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  .bayane-feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .bayane-feature-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-2px);
+  }
+  .bayane-card-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  .bayane-card-sub {
+    font-size: 13px;
+    color: #6b7280;
+  }
+  .bayane-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    margin-top: 14px;
+  }
+  .bayane-hidden {
+    display: none;
+  }
+  .bayane-panel-head,
+  .bayane-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .bayane-groups-wrapper input,
+  .bayane-groups-wrapper textarea,
+  .bayane-groups-wrapper select,
+  .bayane-groups-wrapper button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+  }
+  .bayane-groups-wrapper button {
+    cursor: pointer;
+    background: #f9fafb;
+  }
+</style>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+  // استبدل هاتين القيمتين برابط ومفتاح مشروعك إذا لم يكن لديك عميل جاهز في الصفحة
+  const SUPABASE_URL = window.BAYANE_SUPABASE_URL || 'YOUR_SUPABASE_URL';
+  const SUPABASE_ANON_KEY = window.BAYANE_SUPABASE_ANON_KEY || 'YOUR_SUPABASE_ANON_KEY';
+  const supabase = window.bayaneSupabase || createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const state = {
+    user: null,
+    groups: [],
+    activeGroupId: null,
+    activeTab: null
+  };
+
+  const groupSelect = document.getElementById('bayane-group-select');
+  const subtitleEl = document.getElementById('bayane-active-group-subtitle');
+  const createForm = document.getElementById('bayane-create-group-form');
+  const panelEl = document.getElementById('bayane-tab-panel');
+  const panelTitleEl = document.getElementById('bayane-panel-title');
+  const panelBodyEl = document.getElementById('bayane-panel-body');
+
+  async function addAuditLog(groupId, actionType, details) {
+    if (!state.user || !groupId) return;
+    await supabase.from('group_audit_logs').insert({
+      group_id: groupId,
+      actor_id: state.user.id,
+      action_type: actionType,
+      details
+    });
+  }
+
+  async function initBayaneGroups() {
+    const { data: { user } } = await supabase.auth.getUser();
+    state.user = user;
+
+    if (!user) {
+      subtitleEl.textContent = 'يرجى تسجيل الدخول للوصول إلى مجموعات البحث الخاصة بك.';
+      return;
+    }
+
+    await loadUserGroups();
+  }
+
+  async function loadUserGroups() {
+    const { data, error } = await supabase
+      .from('research_groups')
+      .select('id, title, description, is_private, created_at')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      subtitleEl.textContent = 'تعذر تحميل المجموعات حالياً.';
+      return;
+    }
+
+    state.groups = data || [];
+    groupSelect.innerHTML = '';
+
+    if (!state.groups.length) {
+      state.activeGroupId = null;
+      subtitleEl.textContent = 'لا توجد مجموعات بعد — أنشئ أول مجموعة بحثية الآن.';
+      return;
+    }
+
+    state.groups.forEach((g) => {
+      const opt = document.createElement('option');
+      opt.value = g.id;
+      opt.textContent = g.title;
+      groupSelect.appendChild(opt);
+    });
+
+    state.activeGroupId = state.groups[0].id;
+    groupSelect.value = state.activeGroupId;
+    updateGroupHeader();
+  }
+
+  function updateGroupHeader() {
+    const current = state.groups.find((g) => g.id === state.activeGroupId);
+    subtitleEl.textContent = current?.description || 'مجموعة بحثية خاصة';
+  }
+
+  async function renderTabContent(tab) {
+    if (!state.activeGroupId) {
+      panelTitleEl.textContent = 'تنبيه';
+      panelBodyEl.innerHTML = '<p>اختر أو أنشئ مجموعة بحثية أولاً.</p>';
+      panelEl.classList.remove('bayane-hidden');
+      return;
+    }
+
+    state.activeTab = tab;
+    panelEl.classList.remove('bayane-hidden');
+
+    if (tab === 'discussions') {
+      panelTitleEl.textContent = 'نقاش علمي';
+      const { data: msgs } = await supabase
+        .from('group_discussions')
+        .select('id, message, created_at, profiles(full_name)')
+        .eq('group_id', state.activeGroupId)
+        .order('created_at', { ascending: true });
+
+      const listHtml = (msgs || [])
+        .map((m) => `<li><strong>${m.profiles?.full_name || 'باحث'}:</strong> ${m.message}</li>`)
+        .join('');
+
+      panelBodyEl.innerHTML = `
+        <ul>${listHtml || '<li>لا توجد رسائل بعد.</li>'}</ul>
+        <form id="bayane-msg-form" class="bayane-panel-head">
+          <input id="bayane-msg-input" type="text" placeholder="اكتب تعليقاً أو ملاحظة علمية..." required style="flex:1" />
+          <button type="submit">إرسال</button>
+        </form>
+      `;
+
+      document.getElementById('bayane-msg-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const input = document.getElementById('bayane-msg-input');
+        const message = input.value.trim();
+        if (!message) return;
+
+        await supabase.from('group_discussions').insert({
+          group_id: state.activeGroupId,
+          author_id: state.user.id,
+          message
+        });
+        await addAuditLog(state.activeGroupId, 'discussion', `إضافة رسالة في النقاش العلمي`);
+        input.value = '';
+        renderTabContent('discussions');
+      });
+      return;
+    }
+
+    if (tab === 'tasks') {
+      panelTitleEl.textContent = 'مهام الفريق';
+      const { data: tasks } = await supabase
+        .from('group_tasks')
+        .select('id, title, status')
+        .eq('group_id', state.activeGroupId)
+        .order('created_at', { ascending: false });
+
+      const listHtml = (tasks || [])
+        .map((t) => `<li>${t.title} — <em>(${t.status})</em></li>`)
+        .join('');
+
+      panelBodyEl.innerHTML = `
+        <ul>${listHtml || '<li>لا توجد مهام مسجلة حالياً.</li>'}</ul>
+        <form id="bayane-task-form" class="bayane-panel-head">
+          <input id="bayane-task-input" type="text" placeholder="عنوان مهمة جديدة للفريق..." required style="flex:1" />
+          <button type="submit">إضافة مهمة</button>
+        </form>
+      `;
+
+      document.getElementById('bayane-task-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const input = document.getElementById('bayane-task-input');
+        const title = input.value.trim();
+        if (!title) return;
+
+        await supabase.from('group_tasks').insert({
+          group_id: state.activeGroupId,
+          title,
+          created_by: state.user.id,
+          assigned_to: state.user.id
+        });
+        await addAuditLog(state.activeGroupId, 'task', `إضافة مهمة: ${title}`);
+        input.value = '';
+        renderTabContent('tasks');
+      });
+      return;
+    }
+
+    if (tab === 'logs') {
+      panelTitleEl.textContent = 'سجل التعديلات';
+      const { data: logs } = await supabase
+        .from('group_audit_logs')
+        .select('id, action_type, details, created_at')
+        .eq('group_id', state.activeGroupId)
+        .order('created_at', { ascending: false })
+        .limit(30);
+
+      const listHtml = (logs || [])
+        .map((l) => `<li><strong>${l.action_type}:</strong> ${l.details || ''}</li>`)
+        .join('');
+
+      panelBodyEl.innerHTML = `<ul>${listHtml || '<li>لا توجد تعديلات مسجلة بعد.</li>'}</ul>`;
+      return;
+    }
+
+    const titles = {
+      members: 'أعضاء بلا حد أقصى (دعوة وقبول الأعضاء)',
+      researches: 'ملفات مشتركة ومراجعة البحث قبل النشر',
+      meetings: 'اجتماعات الفريق'
+    };
+    panelTitleEl.textContent = titles[tab] || 'تفاصيل القسم';
+    panelBodyEl.innerHTML = '<p>هذا القسم مرتبط بالمجموعة المحددة وجاهز لتخصيص نماذج الدعوة أو المراجعة أو المواعيد حسب حاجتك.</p>';
+  }
+
+  document.getElementById('bayane-new-group-btn').addEventListener('click', () => {
+    createForm.classList.remove('bayane-hidden');
+  });
+
+  document.getElementById('bayane-cancel-group-btn').addEventListener('click', () => {
+    createForm.classList.add('bayane-hidden');
+    createForm.reset();
+  });
+
+  createForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!state.user) return;
+
+    const title = document.getElementById('bayane-group-title').value.trim();
+    const description = document.getElementById('bayane-group-desc').value.trim();
+    if (!title) return;
+
+    const { data: created, error } = await supabase
+      .from('research_groups')
+      .insert({
+        title,
+        description,
+        is_private: true,
+        created_by: state.user.id
+      })
+      .select()
+      .single();
+
+    if (!error && created) {
+      await supabase.from('research_group_members').insert({
+        group_id: created.id,
+        user_id: state.user.id,
+        role: 'owner',
+        status: 'accepted',
+        invited_by: state.user.id
+      });
+      await addAuditLog(created.id, 'create_group', `إنشاء المجموعة: ${title}`);
+      createForm.reset();
+      createForm.classList.add('bayane-hidden');
+      await loadUserGroups();
+      groupSelect.value = created.id;
+      state.activeGroupId = created.id;
+      updateGroupHeader();
+    }
+  });
+
+  groupSelect.addEventListener('change', (e) => {
+    state.activeGroupId = e.target.value;
+    updateGroupHeader();
+    if (state.activeTab) renderTabContent(state.activeTab);
+  });
+
+  document.querySelectorAll('.bayane-feature-card').forEach((btn) => {
+    btn.addEventListener('click', () => renderTabContent(btn.dataset.tab));
+  });
+
+  document.getElementById('bayane-close-panel-btn').addEventListener('click', () => {
+    panelEl.classList.add('bayane-hidden');
+    state.activeTab = null;
+  });
+
+  initBayaneGroups();
+</script>
