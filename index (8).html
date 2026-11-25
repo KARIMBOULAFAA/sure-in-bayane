@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b3b4a">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E %3Cdefs%3E %3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%2312909b%22/%3E%3Cstop offset=%221%22 stop-color=%22%230a5563%22/%3E%3C/linearGradient%3E %3C/defs%3E %3Ccircle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22url(%23g)%22/%3E %3Cpath d=%22M10 30 C10 38 16 41 25 41 L28 41 L31.2 32 L34.6 47 L37 41 L38 41 C47 41 53.5 37 53.5 19%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%224.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E %3Ccircle cx=%2231%22 cy=%2254.5%22 r=%223.8%22 fill=%22%237ae8d8%22/%3E %3C/svg%3E">
+<title>Sure In Bayane | Medical research community</title>
+<meta name="description" content="Sure In Bayane (SIB) is a medical research community. Search six scientific sources in one place, share your studies and collaborate with researchers.">
+<link rel="canonical" href="https://karimboulafaa.github.io/sure-in-bayane/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sure In Bayane | Medical research community">
+<meta property="og:description" content="Search six scientific sources, share your studies and collaborate with medical researchers.">
+<meta property="og:url" content="https://karimboulafaa.github.io/sure-in-bayane/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:#0b3b4a;
+    --teal:#0e7c86;
+    --paper:#fff;
+    --soft:#eef7f6;
+    --line:#d3e3e6;
+    --muted:#546d79;
+    --ink:#0f2e3d;
+    --warn:#8a5a00;
+    --display:"Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --read:"Newsreader", "Iowan Old Style", Georgia, serif;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:var(--display); font-size:16px; line-height:1.55; background:var(--paper); color:var(--ink); }
+  :focus-visible { outline:2px solid var(--teal); outline-offset:2px; }
+
+  header { background:var(--navy); color:#fff; padding:16px 16px 14px; }
+  header h1 { margin:0; display:flex; align-items:center; gap:10px; font:700 22px/1.2 var(--display); letter-spacing:-.02em; }
+  header h1::before { content:""; width:32px; height:32px; flex:none; background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E %3Cdefs%3E %3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%2312909b%22/%3E%3Cstop offset=%221%22 stop-color=%22%230a5563%22/%3E%3C/linearGradient%3E %3C/defs%3E %3Ccircle cx=%2232%22 cy=%2232%22 r=%2232%22 fill=%22url(%23g)%22/%3E %3Cpath d=%22M10 30 C10 38 16 41 25 41 L28 41 L31.2 32 L34.6 47 L37 41 L38 41 C47 41 53.5 37 53.5 19%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%224.4%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E %3Ccircle cx=%2231%22 cy=%2254.5%22 r=%223.8%22 fill=%22%237ae8d8%22/%3E %3C/svg%3E") center/cover no-repeat; }
+  header p { opacity:.78; margin:3px 0 0 42px; font-size:12.5px; }
+
+  main { max-width:820px; margin:0 auto; padding:22px 16px 60px; }
+  h2 { font:700 28px/1.25 var(--display); margin:0 0 10px; letter-spacing:-.025em; color:var(--navy); }
+  h3 { font:700 18px var(--display); letter-spacing:-.01em; margin:30px 0 8px; color:var(--navy); }
+
+  select, input, textarea, button { font:inherit; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff; color:var(--ink); }
+  input, textarea, select { width:100%; }
+  textarea { min-height:130px; resize:vertical; }
+  button { cursor:pointer; }
+  button.primary { background:var(--teal); color:#fff; border:0; border-radius:8px; font-weight:600; padding:11px 20px; }
+  button.primary:hover:not(:disabled) { background:#0a666e; }
+  button.link { background:none; border:0; padding:0; color:#0a6670; text-decoration:underline; }
+  button.danger { color:#a22; }
+  button:disabled { opacity:.6; cursor:wait; }
+
+  label { display:block; margin:12px 0 4px; font-size:13.5px; color:var(--muted); }
+  .row { display:flex; gap:8px; }
+  .row input { flex:1; }
+  .msg { margin:12px 0; padding:10px 12px; background:var(--soft); border-left:3px solid var(--teal); border-radius:0 8px 8px 0; font-size:15px; }
+  .msg.err { background:#fdecea; border-left-color:#c0392b; color:#8a1c1c; }
+
+  .card { padding:18px 0; border-top:1px solid var(--line); }
+  .card a.t, .card .t { font:600 19px/1.3 var(--display); color:var(--ink); text-decoration:none; letter-spacing:-.01em; }
+  .card a.t:hover { color:var(--teal); }
+  .meta { margin:3px 0; font-size:14px; color:var(--muted); }
+  .abs { font-family:var(--read); font-size:17px; line-height:1.6; max-width:66ch; margin-top:6px; }
+  .abs .link { font-family:var(--display); font-size:14px; }
+
+  .badge { display:inline-block; font-size:12px; padding:1px 8px; border-radius:999px; background:var(--soft); }
+  .badge.pending { background:#fff1d6; color:var(--warn); }
+  .badge.oa, .badge.collab { background:#dff3ee; color:#0b5f52; }
+
+  .stats { display:flex; gap:20px; margin:10px 0; }
+  .stats b, .pr-head h2 { display:block; font:700 24px var(--display); }
+  .view { display:none; }
+  .view.on { display:block; }
+  .note { font-size:13px; color:var(--muted); margin-top:30px; }
+
+  .top { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .acts { display:flex; align-items:center; gap:8px; position:relative; }
+  .iconbtn { white-space:nowrap; background:transparent; color:#fff; border:1px solid rgba(255,255,255,.4); padding:6px 12px; font-size:20px; line-height:1; border-radius:6px; display:inline-flex; align-items:center; }
+  .menu { display:none; position:absolute; right:0; top:100%; margin-top:8px; min-width:220px; background:#fff; border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,.18); z-index:20; overflow:hidden; }
+  .menu.on { display:block; }
+  .menu button, .menu a { display:block; width:100%; text-align:left; background:#fff; color:var(--ink); border:0; border-bottom:1px solid var(--line); border-radius:0; padding:12px 14px; font-size:15px; text-decoration:none; }
+  .menu > :last-child { border-bottom:0; }
+
+  .av { border-radius:50%; object-fit:cover; background:var(--teal); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-weight:700; flex:none; }
+  .pr-head { display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+
+  .tabs { display:flex; gap:20px; border-bottom:1px solid var(--line); margin:16px 0 6px; }
+  .tabs button { border:0; border-bottom:2px solid transparent; border-radius:0; background:none; padding:8px 2px; margin-bottom:-1px; font-size:15px; color:var(--muted); }
+  .tabs button.on { background:none; color:var(--ink); font-weight:600; border-bottom-color:var(--teal); }
+  #tabs { flex-wrap:nowrap; overflow-x:auto; gap:16px; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+  #tabs::-webkit-scrollbar { display:none; }
+  #tabs button { white-space:nowrap; flex:none; }
+  .pane { display:none; }
+  .pane.on { display:block; }
+
+  /* hero: ECG paper with one heartbeat trace drawn on load */
+  .hero { position:relative; overflow:hidden; border:1px solid #cfe6e2; border-radius:20px; color:var(--ink); padding:32px 22px 86px; margin-bottom:22px;
+          background: linear-gradient(rgba(14,124,134,.07) 1px, transparent 1px) 0 0/20px 20px,
+                      linear-gradient(90deg, rgba(14,124,134,.07) 1px, transparent 1px) 0 0/20px 20px,
+                      linear-gradient(160deg, #f6fcfb 0%, #dff3f0 100%); }
+  .hero > div { position:relative; }
+  .hero h2 { color:var(--navy); font:700 clamp(32px,9vw,42px)/1.06 var(--display); margin:0 0 12px; letter-spacing:-.035em; }
+  .hero h2 em { font-style:normal; color:#5fd3cb; }
+  .hero p { margin:0 0 16px; color:#2c4a57; max-width:46ch; }
+  .hero input { border:1px solid #bcd7d9; border-radius:8px; }
+  .hero-cta { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+  .hero-cta button { color:var(--teal); border:1.5px solid var(--teal); background:#fff; border-radius:8px; }
+  .hero-cta button.primary, .hero .primary { background:var(--teal); color:#fff; border:0; }
+  .hero-cta button.primary:hover { background:#0a666e; }
+  .hero-stats { display:flex; gap:22px; margin-top:20px; flex-wrap:wrap; }
+  .hero-stats b { display:block; font:700 22px var(--display); color:var(--navy); }
+  .hero-stats span { font-size:12px; color:var(--muted); }
+  .hero .ecg { position:absolute; left:0; right:0; top:auto; bottom:10px; width:100%; height:64px; opacity:1; pointer-events:none; }
+  .hero .ecg path { fill:none; stroke:var(--teal); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1200; stroke-dashoffset:1200; animation:draw 2.6s ease-out .3s forwards; }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+  @media (prefers-reduced-motion:reduce) { .hero .ecg path { animation:none; stroke-dashoffset:0; } }
+
+  /* features as marked notes */
+  .feat { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px; margin:0 0 8px; }
+  .feat div { background:none; border-radius:0; padding:2px 0 2px 14px; border-left:3px solid var(--teal); font-size:14px; color:var(--muted); }
+  .feat div:nth-child(2) { border-left-color:#5fb3e8; }
+  .feat div:nth-child(3) { border-left-color:#7ad3c4; }
+  .feat div:nth-child(4) { border-left-color:#f0b14a; }
+  .feat b { display:block; font:700 16px var(--display); color:var(--ink); margin-bottom:4px; }
+
+  footer button.link { font-size:13px; }
+  footer { background:var(--soft); border-top:0; padding:22px 16px; text-align:center; font-size:13px; color:var(--muted); }
+
+  /* ---- auth screens (login / sign up) ---- */
+  .auth-wrap { max-width:400px; margin:6px auto 0; }
+  .auth-card { border:1px solid var(--line); border-radius:18px; padding:28px 24px 22px; background:#fff; box-shadow:0 1px 0 var(--line); }
+  .auth-logo { display:flex; flex-direction:column; align-items:center; gap:6px; margin-bottom:22px; text-align:center; }
+  .auth-logo svg.mark { width:68px; height:68px; background:none; border-radius:0; }
+  .auth-logo b { font:700 22px var(--display); margin-top:6px; }
+  .auth-logo span { font-size:14px; color:var(--muted); }
+  .fld { position:relative; margin-bottom:10px; }
+  .fld input { height:54px; padding:21px 56px 6px 14px; border-radius:10px; background:#f7f9fb; }
+  .fld label { position:absolute; left:14px; top:8px; margin:0; font-size:12px; pointer-events:none; }
+  .pw-toggle { position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:0; padding:8px; color:var(--muted); font-size:13px; font-weight:600; }
+  .btn-block { display:block; width:100%; padding:13px; border-radius:10px; font-weight:600; font-size:16px; }
+  .btn-outline { background:#fff; color:var(--teal); border:1.5px solid var(--teal); }
+  .auth-forgot { text-align:center; margin:16px 0 0; }
+  .auth-or { display:flex; align-items:center; gap:12px; color:var(--muted); font-size:13px; margin:22px 0 16px; }
+  .auth-or::before, .auth-or::after { content:""; flex:1; height:1px; background:var(--line); }
+  .auth-small { text-align:center; font-size:12px; color:var(--muted); margin:14px 0 0; }
+  .hint { font-size:12px; color:var(--muted); margin:-4px 2px 10px; min-height:16px; }
+  .hint.ok { color:#17622e; }
+
+  /* ---- profile & researchers ---- */
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0 12px; }
+  label.chk { display:flex; gap:10px; align-items:flex-start; color:var(--ink); font-size:15px; margin:14px 0 0; }
+  label.chk input { width:auto; margin-top:4px; }
+  .prog { height:8px; background:var(--soft); border-radius:6px; overflow:hidden; margin:4px 0 14px; }
+  .prog i { display:block; height:100%; width:0; background:linear-gradient(90deg,#1aa39b,#0b6e69); transition:width .4s; }
+  .person .pr-head { align-items:flex-start; margin:0; }
+  .person .nm { font:600 18px/1.3 var(--display); color:var(--teal); text-decoration:none; }
+  form h3:first-child { margin-top:14px; }
+
+  /* ---- nearby constellation ---- */
+  .const-card { border-radius:16px; background:radial-gradient(circle at 50% 42%, #14636f 0%, #0b3b4a 72%); padding:8px 8px 12px; color:#fff; overflow:hidden; }
+  .const-card svg { display:block; width:100%; max-width:430px; height:auto; margin:0 auto; }
+  .cn { cursor:pointer; outline:none; }
+  .cn:focus-visible circle:first-child { stroke:#fff; stroke-width:2; }
+  .const-legend { display:flex; flex-wrap:wrap; gap:4px 14px; justify-content:center; font-size:12px; opacity:.92; padding:2px 8px 0; }
+  .const-legend i { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:middle; box-sizing:border-box; }
+  .strip { display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding:8px 0 4px; -webkit-overflow-scrolling:touch; }
+  .strip .card { flex:0 0 250px; scroll-snap-align:start; border:1px solid var(--line); border-radius:12px; padding:12px; }
+
+  #v-about p, #v-about li { font-family:var(--read); font-size:18px; line-height:1.65; max-width:62ch; }
+  #v-about .hero { padding-bottom:26px; }
+  #v-about .hero p { font-family:var(--display); font-size:16px; line-height:1.5; }
+  #v-about .feat div { font-family:var(--display); font-size:15px; line-height:1.5; }
+  #au-bio { font-family:var(--read); font-size:18px; line-height:1.6; max-width:62ch; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="sib-mark" viewBox="0 0 64 64"><defs>
+    <linearGradient id="sibg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#12909b"/><stop offset="1" stop-color="#0a5563"/></linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="32" fill="url(#sibg)"/>
+  <path d="M10 30 C10 38 16 41 25 41 L28 41 L31.2 32 L34.6 47 L37 41 L38 41 C47 41 53.5 37 53.5 19" fill="none" stroke="#fff" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="31" cy="54.5" r="3.8" fill="#7ae8d8"/>
+</symbol></svg>
+<header>
+  <div class="top">
+    <div>
+      <h1 translate="no">Sure In Bayane</h1>
+      <p>Read, share and collaborate in medical research</p>
+    </div>
+    <div class="acts">
+      <button id="btnSign" class="iconbtn" style="font-size:14px">Sign in</button>
+      <button id="btnMenu" class="iconbtn" aria-label="Menu" aria-haspopup="true" aria-expanded="false">&#9776;</button>
+      <div class="menu" id="menu" role="menu"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="view" id="v-home">
+    <div class="hero">
+      <svg class="ecg" viewBox="0 0 600 80" preserveAspectRatio="xMinYMid slice" aria-hidden="true" focusable="false"><path d="M0 40 H40 l6 -5 l6 5 H62 l4 5 l7 -38 l7 46 l4 -13 H104 l9 -9 l9 9 H150 H190 l6 -5 l6 5 H212 l4 5 l7 -38 l7 46 l4 -13 H254 l9 -9 l9 9 H300 H340 l6 -5 l6 5 H362 l4 5 l7 -38 l7 46 l4 -13 H404 l9 -9 l9 9 H450 H490 l6 -5 l6 5 H512 l4 5 l7 -38 l7 46 l4 -13 H554 l9 -9 l9 9 H600"/></svg>
+      <div>
+        <h2>Medical research,<br>built together.</h2>
+        <p>Search six scientific sources at once, share your own studies, and connect with students, doctors and researchers who work in your field.</p>
+        <form id="homeSearch" class="row">
+          <input id="hq" type="search" placeholder="Search a disease" aria-label="Search medical research" required>
+          <button class="primary" type="submit">Search</button>
+        </form>
+        <div class="hero-cta" id="heroCta"></div>
+        <div class="hero-stats">
+          <div id="hs-res-box" hidden><b id="hs-res">0</b><span>studies shared</span></div>
+          <div id="hs-mem-box" hidden><b id="hs-mem">0</b><span>members</span></div>
+          <div><b>6</b><span>sources in one search</span></div>
+        </div>
+      </div>
+    </div>
+    <div id="homeMsg"></div>
+    <div id="profBanner"></div>
+    <div id="nearby" hidden>
+      <h3 style="margin-top:0">Researchers near you</h3>
+      <div class="const-card">
+        <svg id="const" viewBox="0 0 360 360" role="img" aria-label="Map of researchers around you, grouped by university, city and field"></svg>
+        <div class="const-legend">
+          <span><i style="background:#5fe0cf"></i>Same university</span>
+          <span><i style="background:#8ec5ff"></i>Same city</span>
+          <span><i style="background:#ffd27a"></i>Same field</span>
+          <span><i style="background:transparent;border:2px solid #d8fff8"></i>Open to collaborate</span>
+        </div>
+      </div>
+      <div id="constInfo" style="margin-top:10px"></div>
+      <div class="strip" id="strip"></div>
+    </div>
+    <div class="feat">
+      <div><b>Search in one place</b>Six sources in one search: our community, PubMed, OpenAlex, Europe PMC, Crossref and clinical trials.</div>
+      <div><b>Share your work</b>Publish your research from your profile after a quick review.</div>
+      <div><b>Find collaborators</b>Meet members from your university, city or specialty.</div>
+    </div>
+    <h3>Latest from our community</h3>
+    <div id="latest"></div>
+  </section>
+
+  <section class="view" id="v-search">
+    <h2>Search research</h2>
+    <form id="searchForm" class="row">
+      <input id="q" type="search" placeholder="For example: leukemia" aria-label="Search research" required>
+      <button class="primary" type="submit">Search</button>
+    </form>
+    <div id="searchStatus" class="meta" role="status"></div>
+    <div class="tabs" id="tabs">
+      <button type="button" data-t="community" class="on">Community <span id="n-community"></span></button>
+      <button type="button" data-t="pubmed">PubMed <span id="n-pubmed"></span></button>
+      <button type="button" data-t="openalex">OpenAlex <span id="n-openalex"></span></button>
+      <button type="button" data-t="europepmc">Europe PMC <span id="n-europepmc"></span></button>
+      <button type="button" data-t="crossref">Crossref <span id="n-crossref"></span></button>
+      <button type="button" data-t="trials">Clinical trials <span id="n-trials"></span></button>
+    </div>
+    <div id="pane-community" class="pane on"></div>
+    <div id="pane-pubmed" class="pane"></div>
+    <div id="pane-openalex" class="pane"></div>
+    <div id="pane-europepmc" class="pane"></div>
+    <div id="pane-crossref" class="pane"></div>
+    <div id="pane-trials" class="pane"></div>
+    <p class="note">Sources: our community, NCBI PubMed, OpenAlex, Europe PMC, Crossref and ClinicalTrials.gov. Preprints are not peer reviewed. Results are for information only and are not medical advice.</p>
+  </section>
+
+  <section class="view" id="v-auth">
+    <div class="auth-wrap"><div class="auth-card">
+      <div class="auth-logo"><svg class="mark" aria-hidden="true"><use href="#sib-mark"/></svg><b translate="no">Sure In Bayane</b><span>Log in to share and discover research</span></div>
+      <button type="button" class="btn-block btn-outline" id="btnGoogle">Continue with Google</button>
+      <div class="auth-or">OR</div>
+      <form id="authForm">
+        <div class="fld"><label for="a-email">Email</label><input id="a-email" type="email" autocomplete="email" inputmode="email" autocapitalize="none" required></div>
+        <div class="fld"><label for="a-pass">Password</label><input id="a-pass" type="password" autocomplete="current-password" required><button type="button" class="pw-toggle" data-target="a-pass" aria-label="Show password">Show</button></div>
+        <button class="primary btn-block" type="submit" id="btnIn">Log in</button>
+      </form>
+      <p class="auth-forgot"><button type="button" class="link" id="btnForgot">Forgot password?</button></p>
+      <div id="authMsg" aria-live="polite"></div>
+      <div class="auth-or">OR</div>
+      <button type="button" class="btn-block btn-outline" id="btnToSignup">Create new account</button>
+    </div></div>
+  </section>
+
+  <section class="view" id="v-signup">
+    <div class="auth-wrap"><div class="auth-card">
+      <div class="auth-logo"><svg class="mark" aria-hidden="true"><use href="#sib-mark"/></svg><b>Create your account</b><span>Join researchers, doctors and medical students</span></div>
+      <button type="button" class="btn-block btn-outline" id="btnGoogle2">Continue with Google</button>
+      <div class="auth-or">OR</div>
+      <form id="suForm">
+        <div class="fld"><label for="su-name">Full name</label><input id="su-name" autocomplete="name" maxlength="120" required></div>
+        <div class="fld"><label for="su-email">Email</label><input id="su-email" type="email" autocomplete="email" inputmode="email" autocapitalize="none" required></div>
+        <div class="fld"><label for="su-pass">Password</label><input id="su-pass" type="password" minlength="8" autocomplete="new-password" required><button type="button" class="pw-toggle" data-target="su-pass" aria-label="Show password">Show</button></div>
+        <div class="hint" id="su-hint">At least 8 characters</div>
+        <div class="fld"><label for="su-pass2">Confirm password</label><input id="su-pass2" type="password" minlength="8" autocomplete="new-password" required><button type="button" class="pw-toggle" data-target="su-pass2" aria-label="Show password">Show</button></div>
+        <button class="primary btn-block" type="submit" id="btnUp">Create account</button>
+      </form>
+      <p class="auth-small">By creating an account you agree to our <button type="button" class="link" id="suTerms" style="font-size:12px">community guidelines and privacy policy</button>.</p>
+      <div id="suMsg" aria-live="polite"></div>
+      <div class="auth-or">OR</div>
+      <button type="button" class="btn-block btn-outline" id="btnToLogin">I already have an account</button>
+    </div></div>
+  </section>
+
+  <section class="view" id="v-people">
+    <h2>Find researchers</h2>
+    <p class="meta">Members who chose to appear here. Find people from your university, city or field, and start collaborating.</p>
+    <form id="peopleForm">
+      <div class="grid2">
+        <div><label for="pf-name">Name</label><input id="pf-name" autocomplete="off"></div>
+        <div><label for="pf-role">Role</label><select id="pf-role"></select></div>
+        <div><label for="pf-level">Study level</label><select id="pf-level"></select></div>
+        <div><label for="pf-uni">University</label><input id="pf-uni" autocomplete="off"></div>
+        <div><label for="pf-spec">Specialty</label><input id="pf-spec" autocomplete="off"></div>
+        <div><label for="pf-country">Country</label><input id="pf-country" list="countryList" autocomplete="off"></div>
+        <div><label for="pf-city">City</label><input id="pf-city" autocomplete="off"></div>
+      </div>
+      <label class="chk"><input type="checkbox" id="pf-collab"> Only people open to collaboration</label>
+      <div class="row" style="margin-top:14px;flex-wrap:wrap"><button class="primary" type="submit" style="flex:none">Search</button><button type="button" id="pfReset" style="flex:none">Reset</button><button type="button" id="btnInvite" style="flex:none">Invite colleagues</button></div>
+    </form>
+    <div id="peopleStatus" class="meta" role="status" style="margin-top:14px"></div>
+    <div id="peopleList"></div>
+  </section>
+
+  <section class="view" id="v-reset">
+    <h2>Set a new password</h2>
+    <form id="resetForm">
+      <label for="r-pass">New password (at least 8 characters)</label>
+      <input id="r-pass" type="password" minlength="8" autocomplete="new-password" required>
+      <div style="margin-top:14px"><button class="primary" type="submit" id="btnResetSave">Save new password</button></div>
+    </form>
+    <div id="resetMsg"></div>
+  </section>
+
+  <section class="view" id="v-admin">
+    <h2>Review submissions</h2>
+    <p class="meta">Approve to publish a study on the site, or delete it to reject it.</p>
+    <div id="adminMsg" aria-live="polite"></div>
+    <div id="adminList"></div>
+  </section>
+
+  <section class="view" id="v-about">
+    <div class="hero" style="padding:22px 20px">
+      <div>
+        <h2 style="font-size:28px;margin-bottom:8px">About <span translate="no">Sure In Bayane</span></h2>
+        <p style="margin:0">An independent online community where medical students, doctors and researchers share their work, search the medical literature and find people to collaborate with.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:6px">Who we are</h3>
+    <p><b translate="no">Sure In Bayane</b> (SIB) was created for one simple reason: good research is easier to do together. Many students and young researchers work alone, far from people who study the same topics. SIB brings them into one place, so they can share their work, learn from each other and build projects together.</p>
+
+    <h3>Our mission</h3>
+    <p>To make medical research more open, more connected and easier to access, starting with students and researchers in our region and reaching anyone who wants to learn and contribute.</p>
+
+    <h3>What you can do here</h3>
+    <div class="feat">
+      <div><b>Search in one place</b>Look through our community, PubMed, OpenAlex, Europe PMC, Crossref and ClinicalTrials.gov with a single search.</div>
+      <div><b>Share your research</b>Submit your abstract and a link to your paper. It is published after a quick review.</div>
+      <div><b>Build your profile</b>Add your study level, degrees, university, faculty, city and specialty.</div>
+      <div><b>Find collaborators</b>Meet members from your university, city or field, and invite colleagues to join.</div>
+    </div>
+
+    <h3>How it works</h3>
+    <ol style="padding-left:20px;margin:6px 0">
+      <li><b>Create a free account</b> with your name and email.</li>
+      <li><b>Complete your profile</b> so others can find you, and choose whether to appear in the Researchers directory.</li>
+      <li><b>Search and share:</b> explore studies, or submit your own work for review.</li>
+      <li><b>Connect:</b> reach researchers from your university or city and start working together.</li>
+    </ol>
+
+    <h3>Who it is for</h3>
+    <p>Medical students, interns and residents, doctors, researchers, professors and other health professionals, from any university or country.</p>
+
+    <div class="hero-cta" style="margin:18px 0 6px">
+      <button class="primary" type="button" id="aboutJoin">Join the community</button>
+      <button type="button" id="aboutSearch" style="color:var(--teal);border-color:var(--teal)">Search research</button>
+    </div>
+
+    <h3>Medical disclaimer</h3>
+    <p>Everything on this site is for information and education only. It is not medical advice and does not replace a consultation with a qualified health professional. Studies shared by members are reviewed only for basic suitability, they are not peer reviewed. Search results from PubMed, OpenAlex, Europe PMC, Crossref and ClinicalTrials.gov come from third parties.</p>
+    <h3>Community guidelines</h3>
+    <p>Share only your own work, or work you have the right to share, and credit all co-authors. Never post anything that could identify a patient. No advertising or spam. We may remove content that breaks these rules.</p>
+    <h3>Privacy</h3>
+    <p>We store the name and email you register with, the profile details you choose to add (role, study level, degrees, university, faculty, country, city, specialty, ORCID, bio, photo) and the research you submit. Your name, profile details and photo are visible to visitors on your published research and your profile page. Your email is not shown on the site. If you switch on "Show me in the Researchers directory", other signed-in members can find you by university, city or specialty. You can switch it off at any time. Accounts are handled by Supabase. You can delete your submitted research from your profile at any time.</p>
+  </section>
+
+  <section class="view" id="v-submit">
+    <p><button class="link" type="button" id="backProf">&larr; Back to my profile</button></p>
+    <h2>Share your research</h2>
+    <form id="submitForm">
+      <label for="s-title">Title</label>
+      <input id="s-title" minlength="5" maxlength="300" required>
+      <label for="s-field">Field</label>
+      <select id="s-field">
+        <option>Cardiology</option><option>Genetics</option><option>Oncology</option>
+        <option>Neurology</option><option>Infectious diseases</option><option>Endocrinology and diabetes</option>
+        <option>Respiratory medicine</option><option>Gastroenterology</option><option>Nephrology</option>
+        <option>Pediatrics</option><option>Obstetrics and gynecology</option><option>Psychiatry</option>
+        <option>Dermatology</option><option>Orthopedics</option><option>Immunology</option>
+        <option>Public health</option><option>Other</option>
+      </select>
+      <label for="s-abs">Abstract</label>
+      <textarea id="s-abs" minlength="20" maxlength="5000" required></textarea>
+      <label for="s-link">Link to the full paper or PDF (optional)</label>
+      <input id="s-link" type="url" placeholder="https://">
+      <label style="display:flex;gap:8px;align-items:flex-start;margin-top:14px;font-size:14px"><input id="s-ok" type="checkbox" required style="width:auto;margin-top:4px"><span>This is my work, or I have the right to share it, and it contains no information that could identify a patient.</span></label>
+      <div style="margin-top:14px"><button class="primary" type="submit" id="btnSubmitRes">Submit for review</button></div>
+    </form>
+    <div id="submitMsg"></div>
+    <p class="note">Posts appear on the site after review. Research shared here is for information only and is not medical advice.</p>
+  </section>
+
+  <section class="view" id="v-profile">
+    <div class="pr-head">
+      <span id="p-av"></span>
+      <div>
+        <h2 style="margin:0">My profile</h2>
+        <input id="p-photo" type="file" accept="image/*" hidden>
+        <button type="button" class="link" id="btnPhoto">Change photo</button>
+      </div>
+    </div>
+    <div id="photoMsg"></div>
+    <div class="meta" id="p-progtxt"></div><div class="prog"><i id="p-prog"></i></div>
+    <div class="stats"><div><b id="st-ok">0</b>published</div><div><b id="st-pend">0</b>in review</div></div>
+    <button class="primary" type="button" id="btnShare">+ Share your research</button>
+    <form id="profForm">
+      <h3>About you</h3>
+      <label for="p-name">Full name</label><input id="p-name" required>
+      <label for="p-role">I am a</label><select id="p-role"></select>
+      <label for="p-level">Study level</label><select id="p-level"></select>
+      <label for="p-degrees">Degrees and certificates</label>
+      <input id="p-degrees" maxlength="300" placeholder="For example: Doctor of Medicine (MD), Master in Public Health">
+      <h3>Where you study or work</h3>
+      <label for="p-uni">University / institution</label>
+      <input id="p-uni" list="uniList" autocomplete="off" placeholder="Pick your country, then type" maxlength="200">
+      <datalist id="uniList"></datalist><datalist id="countryList"></datalist>
+      <div class="meta" style="margin:4px 0 0">Choose your country first, then pick your institution from the suggestions. Only real institutions from the list are accepted. If yours is missing, leave this empty.</div>
+      <label for="p-fac">Faculty / department</label><input id="p-fac" placeholder="For example: Faculty of Medicine">
+      <div class="grid2">
+        <div><label for="p-country">Country</label><select id="p-country"></select></div>
+        <div><label for="p-city">City</label><input id="p-city" list="cityList" autocomplete="off" placeholder="Pick your country, then type" maxlength="80"><datalist id="cityList"></datalist></div>
+      </div>
+      <h3>Research</h3>
+      <label for="p-spec">Specialty or area of interest</label><input id="p-spec" placeholder="For example: Hematology">
+      <label for="p-orcid">ORCID iD</label><input id="p-orcid" placeholder="0000-0000-0000-0000" pattern="\d{4}-\d{4}-\d{4}-\d{3}[\dX]">
+      <label for="p-bio">About you</label><textarea id="p-bio" maxlength="1000" style="min-height:90px"></textarea>
+      <h3>Collaboration</h3>
+      <label class="chk"><input type="checkbox" id="p-dir"><span>Show me in the <b>Researchers</b> directory, so other signed-in members can find me by university, city or specialty. Your email is never shown.</span></label>
+      <label class="chk"><input type="checkbox" id="p-collab"><span>I am open to collaborating on research projects.</span></label>
+      <div style="margin-top:18px"><button class="primary" type="submit">Save profile</button></div>
+    </form>
+    <div id="profMsg"></div>
+    <h3>My research</h3>
+    <div id="mine"></div>
+  </section>
+
+  <section class="view" id="v-author">
+    <div class="pr-head"><span id="au-av"></span><h2 id="au-name" style="margin:0"></h2></div>
+    <p class="meta" id="au-meta"></p>
+    <p id="au-bio"></p>
+    <h3>Published research</h3>
+    <div id="au-list"></div>
+  </section>
+</main>
+
+<footer><button class="link" type="button" id="fAbout">About, terms and privacy</button><br>Search results come from NCBI PubMed, OpenAlex, Europe PMC, Crossref and ClinicalTrials.gov. This site is independent and is not affiliated with any of them.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.58.0/dist/umd/supabase.min.js"></script>
+<script>
+  const sb = supabase.createClient(
+    "https://dysugrfetryiygkrrxcy.supabase.co",
+    "sb_publishable_1sFkhrREpdZjNiulfGFYSw_btI_QJCN"
+  );
+  const $ = (id) => document.getElementById(id);
+  let user = null;
+
+  function el(tag, props, ...kids) {
+    const e = document.createElement(tag);
+    Object.assign(e, props || {});
+    kids.forEach((k) => e.append(k));
+    return e;
+  }
+  function safeUrl(u) { try { const x = new URL(u); return /^https?:$/.test(x.protocol) ? x.href : null; } catch { return null; } }
+  function say(id, text, err) {
+    const box = $(id);
+    if (!box) return;
+    box.replaceChildren(text ? el("div", { className: "msg" + (err ? " err" : ""), textContent: text }) : "");
+  }
+
+  /* ---------- navigation ---------- */
+  const views = ["home", "search", "auth", "signup", "people", "reset", "submit", "profile", "author", "admin", "about"];
+  let nearbyRaf = 0;
+  function show(name) {
+    views.forEach((v) => $("v-" + v).classList.toggle("on", v === name));
+    closeMenu();
+    window.scrollTo(0, 0);
+    cancelAnimationFrame(nearbyRaf);
+    if (name !== "home") say("homeMsg", "");
+    if (name === "home") { loadLatest(); loadStats(); loadNearby(); }
+    if (name === "profile") loadProfile();
+    if (name === "people") loadPeople();
+    if (name === "admin") loadAdmin();
+  }
+  let me = null, isAdmin = false;
+  async function loadMe() {
+    me = null; isAdmin = false;
+    if (!user) return;
+    const { data } = await sb.from("profiles").select("*").eq("id", user.id).single();
+    me = data || null;
+    try {
+      const ad = await sb.from("admins").select("user_id").eq("user_id", user.id).maybeSingle();
+      isAdmin = !!(ad && ad.data);
+    } catch {}
+  }
+  function avatar(url, name, size) {
+    const u = url ? safeUrl(url) : null;
+    let a;
+    if (u) a = el("img", { className: "av", src: u, alt: "" });
+    else { a = el("span", { className: "av", textContent: ((name || "?").trim()[0] || "?").toUpperCase() }); a.style.fontSize = Math.round(size * 0.45) + "px"; }
+    a.style.width = a.style.height = size + "px";
+    return a;
+  }
+  function closeMenu() { $("menu").classList.remove("on"); $("btnMenu").setAttribute("aria-expanded", "false"); }
+  function renderNav() {
+    const menu = $("menu");
+    menu.replaceChildren();
+    const add = (label, fn) => { const b = el("button", { type: "button", textContent: label }); b.setAttribute("role", "menuitem"); b.onclick = () => { closeMenu(); fn(); }; menu.append(b); };
+    add("Home", () => go("home"));
+    add("Search research", () => go("search"));
+    add("Find researchers", () => go("people"));
+    const rg = el("a", { href: "research-groups.html", textContent: "Research groups" }); rg.setAttribute("role", "menuitem"); menu.append(rg);
+    add("About and terms", () => go("about"));
+    if (user) { add("My profile", () => go("profile")); if (isAdmin) add("Review submissions", () => go("admin")); add("Sign out", async () => { await sb.auth.signOut(); show("home"); }); }
+    else add("Sign in", () => go("auth"));
+    const bs = $("btnSign");
+    if (user) { bs.replaceChildren(avatar(me && me.avatar_url, (me && me.full_name) || user.email, 30)); bs.style.padding = "3px"; bs.setAttribute("aria-label", "My profile"); }
+    else { bs.replaceChildren("Sign in"); bs.style.padding = "8px 12px"; bs.setAttribute("aria-label", "Sign in"); }
+    bs.onclick = () => go(user ? "profile" : "auth");
+    renderBanner();
+  }
+  function renderCta() {
+    const c = $("heroCta");
+    c.replaceChildren();
+    if (user) c.append(el("button", { className: "primary", type: "button", textContent: "Share your research", onclick: () => go("submit") }), el("button", { type: "button", textContent: "My profile", onclick: () => go("profile") }), el("button", { type: "button", textContent: "Find researchers", onclick: () => go("people") }));
+    else c.append(el("button", { className: "primary", type: "button", textContent: "Join the community", onclick: () => go("signup") }), el("button", { type: "button", textContent: "Log in", onclick: () => go("auth") }));
+    c.append(el("button", { type: "button", textContent: "Research groups", onclick: () => { location.href = "research-groups.html"; } }));
+  }
+  async function loadStats() {
+    try {
+      const r = await sb.from("researches").select("id", { count: "exact", head: true }).eq("status", "approved");
+      const m = { count: (await sb.rpc("member_count")).data };
+      if (r.count > 0) { $("hs-res").textContent = r.count.toLocaleString(); $("hs-res-box").hidden = false; }
+      if (m.count > 0) { $("hs-mem").textContent = m.count.toLocaleString(); $("hs-mem-box").hidden = false; }
+    } catch {}
+  }
+  const PCOLS = "id,full_name,avatar_url,role,study_level,degrees,university,faculty,specialty,city,country,open_to_collab";
+  function completeness(p) {
+    if (!p) return 0;
+    const keys = ["role", "study_level", "degrees", "university", "faculty", "specialty", "country", "city", "bio", "avatar_url"];
+    return Math.round(keys.filter((k) => p[k] && String(p[k]).trim()).length * 100 / keys.length);
+  }
+  function updateProgress(p) {
+    const pct = completeness(p);
+    $("p-prog").style.width = pct + "%";
+    $("p-progtxt").textContent = "Profile " + pct + "% complete" + (pct < 100 ? ". The more you add, the easier it is for researchers from your university or city to find you." : ".");
+  }
+  function renderBanner() {
+    renderCta();
+    const b = $("profBanner");
+    b.replaceChildren();
+    if (user && me) {
+      const pct = completeness(me);
+      if (pct < 80) {
+        const d = el("div", { className: "msg" });
+        d.append("Your profile is " + pct + "% complete. Add your study level, university and city so researchers near you can find you. ", el("button", { className: "link", type: "button", textContent: "Complete your profile", onclick: () => go("profile") }));
+        b.append(d);
+      }
+    }
+  }
+  function personCard(p) {
+    const c = el("div", { className: "card person" });
+    const head = el("div", { className: "pr-head" });
+    const info = el("div");
+    info.append(el("button", { className: "link nm", type: "button", textContent: p.full_name || "Researcher", onclick: () => openAuthor(p.id) }));
+    const line = (t) => { if (t) info.append(el("div", { className: "meta", textContent: t })); };
+    line([p.role, p.study_level].filter(Boolean).join(", "));
+    line([p.university, p.faculty].filter(Boolean).join(", "));
+    line([p.city, p.country].filter(Boolean).join(", "));
+    line(p.specialty);
+    if (p.open_to_collab) info.append(el("span", { className: "badge collab", textContent: "Open to collaborate" }));
+    head.append(avatar(p.avatar_url, p.full_name, 48), info);
+    c.append(head);
+    return c;
+  }
+  function go(v) {
+    if ((v === "submit" || v === "profile" || v === "admin" || v === "people") && !user) { say("authMsg", "Please sign in first."); v = "auth"; }
+    if (v === "admin" && !isAdmin) v = "home";
+    show(v);
+  }
+
+  function expandable(text) {
+    const box = el("div", { className: "abs" }), LIM = 300;
+    const t = el("span", { textContent: text.length > LIM ? text.slice(0, LIM) + "…" : text });
+    box.append(t);
+    if (text.length > LIM) {
+      let open = false;
+      const b = el("button", { className: "link", type: "button", textContent: " Show more" });
+      b.onclick = () => { open = !open; t.textContent = open ? text : text.slice(0, LIM) + "…"; b.textContent = open ? " Show less" : " Show more"; };
+      box.append(b);
+    }
+    return box;
+  }
+
+  /* ---------- research cards ---------- */
+  function card(r, opts = {}) {
+    const c = el("div", { className: "card" });
+    const url = r.link ? safeUrl(r.link) : null;
+    c.append(url ? el("a", { className: "t", href: url, target: "_blank", rel: "noopener", textContent: r.title }) : el("div", { className: "t", textContent: r.title }));
+    const meta = el("div", { className: "meta" });
+    if (r.profiles && r.profiles.full_name && !opts.hideAuthor) {
+      const av = avatar(r.profiles.avatar_url, r.profiles.full_name, 22); av.style.verticalAlign = "middle"; av.style.marginRight = "6px";
+      meta.append(av, el("button", { className: "link", type: "button", textContent: r.profiles.full_name, onclick: () => openAuthor(r.author_id) }), " — ");
+    }
+    meta.append((r.field || "") + ", " + new Date(r.created_at).toLocaleDateString());
+    if (opts.status) meta.append(" ", el("span", { className: "badge " + r.status, textContent: r.status === "approved" ? "published" : r.status === "pending" ? "in review" : r.status }));
+    c.append(meta, expandable(r.abstract));
+    if (opts.del) {
+      const delWrap = el("div", { style: "margin-top:8px" });
+      const askDel = () => {
+        delWrap.replaceChildren(
+          el("span", { className: "meta", textContent: "Delete this research? " }),
+          el("button", { className: "link danger", type: "button", textContent: "Yes, delete", onclick: async () => {
+            const { error } = await sb.from("researches").delete().eq("id", r.id);
+            if (error) { say("profMsg", "Could not delete: " + friendly(error), true); return; }
+            loadProfile();
+          } }),
+          " · ",
+          el("button", { className: "link", type: "button", textContent: "Cancel", onclick: () => showDelBtn() })
+        );
+      };
+      const showDelBtn = () => delWrap.replaceChildren(el("button", { className: "link danger", type: "button", textContent: "Delete", onclick: askDel }));
+      showDelBtn();
+      c.append(delWrap);
+    }
+    return c;
+  }
+
+  function fetchCommunity(term) {
+    let query = sb.from("researches")
+      .select("id,title,abstract,field,link,created_at,author_id,profiles(full_name,avatar_url)")
+      .eq("status", "approved").order("created_at", { ascending: false }).limit(30);
+    if (term) {
+      const t = term.replace(/[%,()]/g, " ");
+      query = query.or(`title.ilike.%${t}%,abstract.ilike.%${t}%,field.ilike.%${t}%`);
+    }
+    return query;
+  }
+  async function loadLatest() {
+    const box = $("latest");
+    const { data, error } = await fetchCommunity();
+    if (error) { box.replaceChildren(el("div", { className: "msg err", textContent: "Could not load research." })); return; }
+    box.replaceChildren(...(data.length ? data.map((r) => card(r)) : [el("div", { className: "msg", textContent: "No research published yet. Be the first to share yours." })]));
+  }
+
+  async function openAuthor(id) {
+    const { data: p } = await sb.from("profiles").select("*").eq("id", id).single();
+    if (!p) return;
+    $("au-name").textContent = p.full_name || "Researcher";
+    $("au-av").replaceChildren(avatar(p.avatar_url, p.full_name, 64));
+    $("au-meta").textContent = [p.role, p.study_level, p.degrees, p.university, p.faculty, [p.city, p.country].filter(Boolean).join(", "), p.specialty, p.orcid ? "ORCID " + p.orcid : ""].filter(Boolean).join(", ");
+    $("au-bio").textContent = p.bio || "";
+    const { data: rs } = await sb.from("researches").select("id,title,abstract,field,link,created_at,author_id").eq("author_id", id).eq("status", "approved").order("created_at", { ascending: false });
+    $("au-list").replaceChildren(...((rs || []).length ? rs.map((r) => card(r, { hideAuthor: true })) : [el("div", { className: "msg", textContent: "No published research yet." })]));
+    show("author");
+  }
+
+  /* ---------- admin review ---------- */
+  async function loadAdmin() {
+    const box = $("adminList");
+    say("adminMsg", "");
+    box.replaceChildren(el("div", { className: "msg", textContent: "Loading…" }));
+    const { data, error } = await sb.from("researches")
+      .select("id,title,abstract,field,link,created_at,author_id,status,profiles(full_name,avatar_url,university)")
+      .eq("status", "pending").order("created_at", { ascending: true });
+    if (error) { box.replaceChildren(el("div", { className: "msg err", textContent: "Could not load: " + error.message })); return; }
+    if (!data.length) { box.replaceChildren(el("div", { className: "msg", textContent: "Nothing is waiting for review." })); return; }
+    box.replaceChildren(...data.map((r) => {
+      const c = card(r);
+      const uni = r.profiles && r.profiles.university;
+      if (uni) c.append(el("div", { className: "meta", textContent: uni }));
+      const row = el("div", { className: "row" });
+      row.style.cssText = "margin-top:8px;align-items:center;flex-wrap:wrap";
+      const renderActions = () => {
+        const approveBtn = el("button", { className: "primary", type: "button", textContent: "Approve", onclick: async () => {
+          busy(approveBtn, true, "Approving…");
+          const res = await sb.from("researches").update({ status: "approved" }).eq("id", r.id);
+          if (res.error) { busy(approveBtn, false); say("adminMsg", "Could not approve: " + friendly(res.error), true); return; }
+          await loadAdmin();
+          say("adminMsg", "Study approved and published.");
+        } });
+        const rejectBtn = el("button", { className: "link danger", type: "button", textContent: "Delete", onclick: () => {
+          row.replaceChildren(
+            el("span", { className: "meta", textContent: "Reject and delete this submission? " }),
+            el("button", { className: "link danger", type: "button", textContent: "Yes, delete", onclick: async () => {
+              const res = await sb.from("researches").delete().eq("id", r.id);
+              if (res.error) { say("adminMsg", "Could not delete: " + friendly(res.error), true); renderActions(); return; }
+              await loadAdmin();
+              say("adminMsg", "Submission deleted.");
+            } }),
+            el("button", { className: "link", type: "button", textContent: "Cancel", onclick: renderActions })
+          );
+        } });
+        row.replaceChildren(approveBtn, rejectBtn);
+      };
+      renderActions();
+      c.append(row);
+      return c;
+    }));
+  }
+
+  /* ---------- auth ---------- */
+  function friendly(err) {
+    const m = String((err && err.message) || err || "");
+    if (/column|schema cache/i.test(m) && /(does not exist|could not find)/i.test(m)) return "The site database needs a one-time update for the new profile fields. Please contact the site admin.";
+    if (/invalid login credentials/i.test(m)) return "Incorrect email or password. If you just signed up, confirm your email first.";
+    if (/email not confirmed/i.test(m)) return "Your email is not confirmed yet. Open the confirmation link we sent you (check spam too).";
+    if (/error sending|sending (confirmation|recovery|magic)|smtp/i.test(m)) return "We couldn't send the email right now. Please try again in a few minutes. If it keeps happening, contact the site team.";
+    if (/rate limit|too many|security purposes/i.test(m) || (err && err.status === 429)) return "Too many attempts. Please wait a few minutes and try again.";
+    if (/already (been )?registered/i.test(m)) return "This email already has an account. Log in instead.";
+    if (/password/i.test(m) && /(short|least|weak)/i.test(m)) return "Choose a stronger password (at least 8 characters).";
+    if (/failed to fetch|network/i.test(m)) return "Network problem. Check your connection and try again.";
+    return m || "Something went wrong. Please try again.";
+  }
+  function busy(btn, on, label) {
+    if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+    btn.disabled = on;
+    btn.textContent = on ? label : btn.dataset.label;
+  }
+  async function resendConfirm(email) {
+    try {
+      const { error } = await sb.auth.resend({ type: "signup", email, options: { emailRedirectTo: location.origin + location.pathname } });
+      say("authMsg", error ? friendly(error) : "Confirmation email sent again. Check your inbox.", !!error);
+    } catch (x) {
+      say("authMsg", friendly(x), true);
+    }
+  }
+  document.querySelectorAll(".pw-toggle").forEach((b) => b.addEventListener("click", () => {
+    const i = $(b.dataset.target), showPw = i.type === "password";
+    i.type = showPw ? "text" : "password";
+    b.textContent = showPw ? "Hide" : "Show";
+    b.setAttribute("aria-label", showPw ? "Hide password" : "Show password");
+  }));
+  async function googleSignIn(msgId) {
+    try {
+      const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname } });
+      if (error) say(msgId, friendly(error), true);
+    } catch (x) { say(msgId, friendly(x), true); }
+  }
+  $("btnGoogle").onclick = () => googleSignIn("authMsg");
+  $("btnGoogle2").onclick = () => googleSignIn("suMsg");
+  $("btnToSignup").onclick = () => { $("authMsg").replaceChildren(); go("signup"); };
+  $("btnToLogin").onclick = () => { $("suMsg").replaceChildren(); go("auth"); };
+  $("suTerms").onclick = () => go("about");
+
+  $("authForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const email = $("a-email").value.trim(), pass = $("a-pass").value, btn = $("btnIn");
+    if (!email || !pass) { say("authMsg", "Enter your email and password.", true); return; }
+    busy(btn, true, "Logging in…");
+    try {
+      const { error } = await sb.auth.signInWithPassword({ email, password: pass });
+      if (error) {
+        say("authMsg", friendly(error), true);
+        if (/email not confirmed/i.test(error.message || "")) $("authMsg").firstChild.append(" ", el("button", { className: "link", type: "button", textContent: "Resend email", onclick: () => resendConfirm(email) }));
+      } else { $("authForm").reset(); show("home"); }
+    } catch (x) { say("authMsg", friendly(x), true); }
+    busy(btn, false);
+  });
+
+  $("su-pass").addEventListener("input", () => {
+    const v = $("su-pass").value, h = $("su-hint");
+    let score = [/[a-z]/, /[A-Z]/, /\d/, /[^A-Za-z0-9]/].filter((r) => r.test(v)).length;
+    h.className = "hint";
+    if (!v) h.textContent = "At least 8 characters";
+    else if (v.length < 8) h.textContent = "Too short: " + v.length + " of 8 characters";
+    else if (score >= 3 && v.length >= 10) { h.textContent = "Strong password"; h.classList.add("ok"); }
+    else { h.textContent = "Good. Add capitals, numbers or symbols to make it stronger"; h.classList.add("ok"); }
+  });
+
+  $("suForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = $("su-name").value.trim(), email = $("su-email").value.trim(), pass = $("su-pass").value, btn = $("btnUp");
+    if (!name || !email) { say("suMsg", "Enter your full name and email.", true); return; }
+    if (pass.length < 8) { say("suMsg", "Your password must be at least 8 characters.", true); return; }
+    if (pass !== $("su-pass2").value) { say("suMsg", "The two passwords do not match.", true); return; }
+    busy(btn, true, "Creating account…");
+    try {
+      const { data, error } = await sb.auth.signUp({ email, password: pass, options: { data: { full_name: name }, emailRedirectTo: location.origin + location.pathname } });
+      if (error) say("suMsg", friendly(error), true);
+      else if (data.user && data.user.identities && data.user.identities.length === 0) say("suMsg", "This email already has an account. Log in instead.", true);
+      else if (data.session) { $("suForm").reset(); show("profile"); say("profMsg", "Welcome! Add your role, university and faculty so other researchers know who you are."); }
+      else { $("suForm").reset(); say("suMsg", "Account created. We sent a confirmation link to " + email + ". Open it, then log in."); }
+    } catch (x) { say("suMsg", friendly(x), true); }
+    busy(btn, false);
+  });
+
+  /* ---------- submit research ---------- */
+  $("submitForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!user) { go("auth"); return; }
+    const link = $("s-link").value.trim(), btn = $("btnSubmitRes");
+    if (link && !safeUrl(link)) { say("submitMsg", "The link must start with http:// or https://", true); return; }
+    busy(btn, true, "Submitting…");
+    const { error } = await sb.from("researches").insert({
+      author_id: user.id, title: $("s-title").value.trim(), abstract: $("s-abs").value.trim(),
+      field: $("s-field").value, link: link || null
+    });
+    busy(btn, false);
+    if (error) { say("submitMsg", "Could not submit: " + friendly(error), true); return; }
+    e.target.reset();
+    show("profile");
+    say("profMsg", "Submitted. Your research will appear on the site after review.");
+  });
+
+  /* ---------- profile ---------- */
+  async function loadProfile() {
+    if (!user) return;
+    const { data: p } = await sb.from("profiles").select("*").eq("id", user.id).single();
+    $("p-av").replaceChildren(avatar(p && p.avatar_url, p && p.full_name, 72));
+    if (p) {
+      const set = (id, k) => { $(id).value = p[k] || ""; };
+      set("p-name", "full_name"); set("p-role", "role"); set("p-level", "study_level"); set("p-degrees", "degrees");
+      set("p-uni", "university"); set("p-fac", "faculty"); set("p-country", "country"); set("p-city", "city");
+      set("p-spec", "specialty"); set("p-orcid", "orcid"); set("p-bio", "bio");
+      $("p-dir").checked = !!p.show_in_directory; $("p-collab").checked = !!p.open_to_collab;
+    }
+    updateProgress(p);
+    const { data: rs } = await sb.from("researches").select("id,title,abstract,field,link,created_at,author_id,status").eq("author_id", user.id).order("created_at", { ascending: false });
+    const list = rs || [];
+    $("st-ok").textContent = list.filter((r) => r.status === "approved").length;
+    $("st-pend").textContent = list.filter((r) => r.status === "pending").length;
+    $("mine").replaceChildren(...(list.length ? list.map((r) => card(r, { hideAuthor: true, status: true, del: true })) : [el("div", { className: "msg", textContent: "You have not shared any research yet." })]));
+  }
+  /* ---------- profile validation: only real values are saved ---------- */
+  const norm = (v) => String(v || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  function orcidOk(v) {
+    if (!/^\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/.test(v)) return false;
+    const d = v.replace(/-/g, "");
+    let t = 0;
+    for (let i = 0; i < 15; i++) t = (t + Number(d[i])) * 2;
+    const r = (12 - (t % 11)) % 11;
+    return d[15] === (r === 10 ? "X" : String(r));
+  }
+  let cityTimer;
+  $("p-city").addEventListener("input", () => {
+    clearTimeout(cityTimer);
+    const q = $("p-city").value.trim(), code = CC[$("p-country").value];
+    if (q.length < 2 || !code) return;
+    cityTimer = setTimeout(async () => {
+      try {
+        const r = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=10&language=en&format=json&countryCode=${code}&country_code=${code}`);
+        if (!r.ok) return;
+        const j = await r.json(), seen = new Set();
+        $("cityList").replaceChildren(...(j.results || []).filter((x) => x.country_code === code && !seen.has(x.name) && seen.add(x.name)).map((x) => {
+          const o = document.createElement("option"); o.value = x.name; o.label = x.admin1 || ""; return o;
+        }));
+      } catch {}
+    }, 300);
+  });
+  async function checkProfile() {
+    const name = $("p-name").value.trim();
+    if (name.length < 2 || !/\p{L}/u.test(name)) return "Enter your real full name.";
+    const orcid = $("p-orcid").value.trim().toUpperCase();
+    if (orcid && !orcidOk(orcid)) return "This ORCID iD is not valid. Check the 16 digits (format 0000-0000-0000-0000).";
+    $("p-orcid").value = orcid;
+    const country = $("p-country").value, code = CC[country];
+    const city = $("p-city").value.trim(), uni = $("p-uni").value.trim();
+    if ((city || uni) && !code) return "Choose your country first, then your city and institution.";
+    try {
+      if (city) {
+        const r = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=20&language=en&format=json&countryCode=${code}&country_code=${code}`);
+        if (!r.ok) throw new Error("lookup");
+        const j = await r.json();
+        const hit = (j.results || []).find((x) => x.country_code === code && norm(x.name) === norm(city));
+        if (!hit) return "We could not find this city in " + country + ". Pick it from the suggestions, or check the spelling.";
+        $("p-city").value = hit.name;
+      }
+      if (uni) {
+        const r = await fetch(`https://api.openalex.org/institutions?search=${encodeURIComponent(uni)}&filter=country_code:${code}&per-page=25&select=display_name`);
+        if (!r.ok) throw new Error("lookup");
+        const j = await r.json();
+        const hit = (j.results || []).find((x) => norm(x.display_name) === norm(uni));
+        if (!hit) return "This institution is not in the " + country + " list. Pick it from the suggestions, or leave it empty.";
+        $("p-uni").value = hit.display_name;
+      }
+    } catch { return "We could not verify your city or institution right now. Check your connection and try again."; }
+    return "";
+  }
+
+  $("profForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const t = (id) => $(id).value.trim() || null, btn = e.target.querySelector("button.primary");
+    busy(btn, true, "Checking…");
+    const bad = await checkProfile();
+    if (bad) { busy(btn, false); say("profMsg", bad, true); return; }
+    busy(btn, true, "Saving…");
+    const { error } = await sb.from("profiles").update({
+      full_name: $("p-name").value.trim(), role: $("p-role").value || null, study_level: $("p-level").value || null,
+      degrees: t("p-degrees"), university: t("p-uni"), faculty: t("p-fac"), country: t("p-country"), city: t("p-city"),
+      specialty: t("p-spec"), orcid: t("p-orcid"), bio: t("p-bio"),
+      show_in_directory: $("p-dir").checked, open_to_collab: $("p-collab").checked
+    }).eq("id", user.id);
+    busy(btn, false);
+    say("profMsg", error ? "Could not save: " + friendly(error) : "Profile saved.", !!error);
+    if (!error) { await loadMe(); renderNav(); updateProgress(me); }
+  });
+
+  /* ---------- researchers directory ---------- */
+  const sq = (v) => v.replace(/[%,()]/g, " ").trim();
+  async function loadPeople() {
+    const box = $("peopleList");
+    box.replaceChildren(msgNode("Loading…"));
+    let q = sb.from("profiles").select(PCOLS).eq("show_in_directory", true).order("full_name").limit(60);
+    [["full_name", "pf-name"], ["university", "pf-uni"], ["specialty", "pf-spec"], ["country", "pf-country"], ["city", "pf-city"]].forEach(([col, id]) => {
+      const v = sq($(id).value); if (v) q = q.ilike(col, `%${v}%`);
+    });
+    if ($("pf-role").value) q = q.eq("role", $("pf-role").value);
+    if ($("pf-level").value) q = q.eq("study_level", $("pf-level").value);
+    if ($("pf-collab").checked) q = q.eq("open_to_collab", true);
+    const { data, error } = await q;
+    if (error) { box.replaceChildren(msgNode(friendly(error), true)); $("peopleStatus").textContent = ""; return; }
+    $("peopleStatus").textContent = data.length ? data.length + (data.length === 1 ? " researcher found" : " researchers found") : "";
+    box.replaceChildren(...(data.length ? data.map(personCard) : [msgNode("No researchers match yet. Try fewer filters, or invite your colleagues to join.")]));
+  }
+  $("peopleForm").addEventListener("submit", (e) => { e.preventDefault(); loadPeople(); });
+  $("pfReset").onclick = () => { $("peopleForm").reset(); loadPeople(); };
+  $("btnInvite").onclick = async () => {
+    const url = location.origin + location.pathname;
+    try {
+      if (navigator.share) { await navigator.share({ title: "Sure In Bayane", text: "Join me on Sure In Bayane, a community for medical researchers.", url }); return; }
+      await navigator.clipboard.writeText(url); say("peopleStatus", "Link copied. Send it to your colleagues.");
+    } catch {}
+  };
+
+  /* ---------- university suggestions (OpenAlex institutions, worldwide) ---------- */
+  let uniTimer;
+  $("p-uni").addEventListener("input", () => {
+    clearTimeout(uniTimer);
+    const q = $("p-uni").value.trim();
+    if (q.length < 2) return;
+    uniTimer = setTimeout(async () => {
+      try {
+        const cc0 = CC[$("p-country").value];
+        const r = await fetch(`https://api.openalex.org/institutions?search=${encodeURIComponent(q)}&per-page=10&select=display_name,country_code` + (cc0 ? "&filter=country_code:" + cc0 : ""));
+        if (!r.ok) return;
+        const j = await r.json();
+        let dn = null; try { dn = new Intl.DisplayNames(["en"], { type: "region" }); } catch {}
+        $("uniList").replaceChildren(...j.results.map((x) => {
+          const o = document.createElement("option");
+          o.value = x.display_name;
+          try { o.label = dn && x.country_code ? dn.of(x.country_code) : ""; } catch { o.label = x.country_code || ""; }
+          return o;
+        }));
+      } catch {}
+    }, 300);
+  });
+
+  /* ---------- search: community + 5 external sources ---------- */
+  const EU = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
+  const clean = (t) => String(t || "").replace(/<[^>]+>/g, "").trim();
+  const msgNode = (t, err) => el("div", { className: "msg" + (err ? " err" : ""), textContent: t });
+  function setPane(key, nodes, count) {
+    $("pane-" + key).replaceChildren(...nodes);
+    $("n-" + key).textContent = count == null ? "" : "(" + count + ")";
+  }
+  const SRC = ["community", "pubmed", "openalex", "europepmc", "crossref", "trials"];
+  function pickTab(k) {
+    document.querySelectorAll("#tabs button").forEach((b) => b.classList.toggle("on", b.dataset.t === k));
+    SRC.forEach((x) => $("pane-" + x).classList.toggle("on", x === k));
+  }
+  document.querySelectorAll("#tabs button").forEach((b) => b.addEventListener("click", () => pickTab(b.dataset.t)));
+
+  function extCard(o) {
+    const c = el("div", { className: "card" });
+    const u = o.url ? safeUrl(o.url) : null;
+    c.append(u ? el("a", { className: "t", href: u, target: "_blank", rel: "noopener", textContent: o.title }) : el("div", { className: "t", textContent: o.title }));
+    const meta = el("div", { className: "meta", textContent: o.meta });
+    if (o.oa) meta.append(" ", el("span", { className: "badge oa", textContent: "Open access" }));
+    c.append(meta);
+    if (o.abstract) c.append(expandable(o.abstract));
+    const fu = o.free ? safeUrl(o.free) : null;
+    if (fu) c.append(el("a", { className: "meta", href: fu, target: "_blank", rel: "noopener", textContent: "Read free full text" }));
+    return c;
+  }
+  function abstractFrom(idx) {
+    if (!idx) return "";
+    const words = [];
+    for (const [w, pos] of Object.entries(idx)) pos.forEach((i) => { words[i] = w; });
+    return words.join(" ");
+  }
+
+  async function searchCommunity(term) {
+    const { data, error } = await fetchCommunity(term);
+    if (error) { setPane("community", [msgNode("Could not load community research.", true)], null); return 0; }
+    setPane("community", data.length ? data.map((r) => card(r)) : [msgNode("No community research on this topic yet.")], data.length);
+    return data.length;
+  }
+  async function searchPubmed(term) {
+    try {
+      const sj = await (await fetch(`${EU}esearch.fcgi?db=pubmed&retmode=json&retmax=10&sort=relevance&term=${encodeURIComponent(term)}`)).json();
+      const ids = sj.esearchresult.idlist;
+      if (!ids.length) { setPane("pubmed", [msgNode("No PubMed articles found.")], 0); return 0; }
+      const dj = await (await fetch(`${EU}esummary.fcgi?db=pubmed&retmode=json&id=${ids.join(",")}`)).json();
+      const nodes = ids.map((id) => {
+        const a = dj.result[id], au = a.authors || [];
+        return extCard({
+          title: clean(a.title), url: `https://pubmed.ncbi.nlm.nih.gov/${id}/`,
+          meta: `${au.slice(0, 4).map((x) => x.name).join(", ")}${au.length > 4 ? ", et al." : ""} — ${a.source || ""} ${a.pubdate || ""}`
+        });
+      });
+      setPane("pubmed", nodes, Number(sj.esearchresult.count).toLocaleString());
+      return ids.length;
+    } catch { setPane("pubmed", [msgNode("Could not reach PubMed. Try again.", true)], null); return 0; }
+  }
+  async function searchOpenAlex(term) {
+    const base = `https://api.openalex.org/works?search=${encodeURIComponent(term)}&per-page=10&select=id,doi,display_name,publication_year,authorships,primary_location,open_access,cited_by_count,abstract_inverted_index`;
+    try {
+      let r = await fetch(base + "&filter=primary_topic.field.id:27%7C24%7C13%7C28%7C29%7C30%7C36");
+      if (!r.ok) r = await fetch(base);
+      if (!r.ok) throw new Error("bad response");
+      const j = await r.json();
+      if (!j.results.length) { setPane("openalex", [msgNode("No results found.")], 0); return 0; }
+      const nodes = j.results.map((w) => {
+        const au = (w.authorships || []).map((x) => x.author && x.author.display_name).filter(Boolean);
+        const loc = w.primary_location || {};
+        const src = loc.source && loc.source.display_name;
+        const oa = w.open_access || {};
+        return extCard({
+          title: clean(w.display_name) || "Untitled",
+          url: w.doi || loc.landing_page_url || w.id,
+          meta: `${au.slice(0, 4).join(", ")}${au.length > 4 ? ", et al." : ""} — ${src || ""} ${w.publication_year || ""} • cited ${w.cited_by_count || 0}×`,
+          abstract: clean(abstractFrom(w.abstract_inverted_index)),
+          oa: oa.is_oa, free: oa.oa_url
+        });
+      });
+      setPane("openalex", nodes, (j.meta && j.meta.count != null ? Number(j.meta.count).toLocaleString() : j.results.length));
+      return j.results.length;
+    } catch { setPane("openalex", [msgNode("Could not reach this source. Try again.", true)], null); return 0; }
+  }
+  async function searchEuropePmc(term) {
+    try {
+      const r = await fetch(`https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=${encodeURIComponent(term)}&format=json&pageSize=10&resultType=core`);
+      if (!r.ok) throw new Error("bad response");
+      const j = await r.json(), list = (j.resultList && j.resultList.result) || [];
+      if (!list.length) { setPane("europepmc", [msgNode("No results found.")], 0); return 0; }
+      const nodes = list.map((a) => extCard({
+        title: clean(a.title) || "Untitled",
+        url: a.source && a.id ? `https://europepmc.org/article/${a.source}/${a.id}` : (a.doi ? "https://doi.org/" + a.doi : ""),
+        meta: `${a.authorString || ""} — ${a.journalTitle || ""} ${a.pubYear || ""}${a.source === "PPR" ? " • preprint, not peer reviewed" : ""}`,
+        abstract: clean(a.abstractText),
+        oa: a.isOpenAccess === "Y"
+      }));
+      setPane("europepmc", nodes, Number(j.hitCount).toLocaleString());
+      return list.length;
+    } catch { setPane("europepmc", [msgNode("Could not reach Europe PMC. Try again.", true)], null); return 0; }
+  }
+  async function searchCrossref(term) {
+    try {
+      const r = await fetch(`https://api.crossref.org/works?query=${encodeURIComponent(term)}&rows=10&filter=type:journal-article&select=DOI,title,author,issued,container-title,abstract,is-referenced-by-count,URL`);
+      if (!r.ok) throw new Error("bad response");
+      const m = (await r.json()).message || {}, list = m.items || [];
+      if (!list.length) { setPane("crossref", [msgNode("No results found.")], 0); return 0; }
+      const nodes = list.map((w) => {
+        const au = (w.author || []).map((x) => [x.given, x.family].filter(Boolean).join(" ")).filter(Boolean);
+        const yr = w.issued && w.issued["date-parts"] && w.issued["date-parts"][0] && w.issued["date-parts"][0][0];
+        return extCard({
+          title: clean((w.title || [])[0]) || "Untitled",
+          url: w.DOI ? "https://doi.org/" + w.DOI : w.URL,
+          meta: `${au.slice(0, 4).join(", ")}${au.length > 4 ? ", et al." : ""} — ${(w["container-title"] || [])[0] || ""} ${yr || ""} • cited ${w["is-referenced-by-count"] || 0}×`,
+          abstract: clean(w.abstract)
+        });
+      });
+      setPane("crossref", nodes, Number(m["total-results"]).toLocaleString());
+      return list.length;
+    } catch { setPane("crossref", [msgNode("Could not reach Crossref. Try again.", true)], null); return 0; }
+  }
+  async function searchTrials(term) {
+    const base = `https://clinicaltrials.gov/api/v2/studies?query.term=${encodeURIComponent(term)}&pageSize=10&countTotal=true&format=json`;
+    try {
+      let r = await fetch(base + "&fields=NCTId,BriefTitle,OverallStatus,Phase,Condition,LeadSponsorName,BriefSummary,StartDate");
+      if (!r.ok) r = await fetch(base);
+      if (!r.ok) throw new Error("bad response");
+      const j = await r.json(), list = j.studies || [];
+      if (!list.length) { setPane("trials", [msgNode("No clinical trials found.")], 0); return 0; }
+      const nice = (x) => String(x || "").replace(/_/g, " ").toLowerCase();
+      const nodes = list.map((s) => {
+        const p = s.protocolSection || {}, id = p.identificationModule || {}, st = p.statusModule || {};
+        const ph = (p.designModule && p.designModule.phases) || [], cond = (p.conditionsModule && p.conditionsModule.conditions) || [];
+        const sp = p.sponsorCollaboratorsModule && p.sponsorCollaboratorsModule.leadSponsor && p.sponsorCollaboratorsModule.leadSponsor.name;
+        return extCard({
+          title: clean(id.briefTitle) || "Untitled",
+          url: id.nctId ? "https://clinicaltrials.gov/study/" + id.nctId : "",
+          meta: [id.nctId, nice(st.overallStatus), ph.map(nice).join(" / "), cond.slice(0, 3).join(", "), sp].filter(Boolean).join(" • "),
+          abstract: clean(p.descriptionModule && p.descriptionModule.briefSummary)
+        });
+      });
+      setPane("trials", nodes, j.totalCount != null ? Number(j.totalCount).toLocaleString() : list.length);
+      return list.length;
+    } catch { setPane("trials", [msgNode("Could not reach ClinicalTrials.gov. Try again.", true)], null); return 0; }
+  }
+  async function runSearch(term) {
+    show("search");
+    $("q").value = term;
+    $("searchStatus").textContent = "Searching…";
+    SRC.forEach((k) => setPane(k, [msgNode("Searching…")], null));
+    pickTab("pubmed");
+    const c = await Promise.all([searchCommunity(term), searchPubmed(term), searchOpenAlex(term), searchEuropePmc(term), searchCrossref(term), searchTrials(term)]);
+    $("searchStatus").textContent = "Results for “" + term + "”";
+    pickTab(SRC[c.findIndex((n) => n > 0)] || "pubmed");
+  }
+  $("searchForm").addEventListener("submit", (e) => { e.preventDefault(); runSearch($("q").value.trim()); });
+  $("homeSearch").addEventListener("submit", (e) => { e.preventDefault(); runSearch($("hq").value.trim()); });
+
+  /* ---------- profile photo ---------- */
+  function resizeImage(file, max) {
+    return new Promise((res, rej) => {
+      const img = new Image(), u = URL.createObjectURL(file);
+      img.onload = () => {
+        const k = Math.min(1, max / Math.max(img.width, img.height));
+        const c = document.createElement("canvas");
+        c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(u);
+        c.toBlob((b) => (b ? res(b) : rej(new Error("Could not process the image"))), "image/jpeg", 0.85);
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(u);
+        rej(new Error("Could not read the image"));
+      };
+      img.src = u;
+    });
+  }
+  $("btnPhoto").onclick = () => $("p-photo").click();
+  $("btnShare").onclick = () => go("submit");
+  $("backProf").onclick = () => go("profile");
+  $("p-photo").addEventListener("change", async (e) => {
+    const f = e.target.files[0]; e.target.value = "";
+    if (!f || !user) return;
+    if (!f.type.startsWith("image/")) { say("photoMsg", "Please choose an image file.", true); return; }
+    say("photoMsg", "Uploading…");
+    try {
+      const blob = await resizeImage(f, 300), path = user.id + "/avatar.jpg";
+      const up = await sb.storage.from("avatars").upload(path, blob, { upsert: true, contentType: "image/jpeg" });
+      if (up.error) throw up.error;
+      const url = sb.storage.from("avatars").getPublicUrl(path).data.publicUrl + "?v=" + Date.now();
+      const r = await sb.from("profiles").update({ avatar_url: url }).eq("id", user.id);
+      if (r.error) throw r.error;
+      await loadMe(); renderNav(); await loadProfile();
+      say("photoMsg", "Photo updated.");
+    } catch (err) { say("photoMsg", "Could not upload the photo: " + (err.message || err), true); }
+  });
+
+  /* ---------- menu ---------- */
+  $("btnMenu").onclick = (e) => {
+    e.stopPropagation();
+    const m = $("menu"), on = !m.classList.contains("on");
+    m.classList.toggle("on", on);
+    $("btnMenu").setAttribute("aria-expanded", String(on));
+  };
+  document.addEventListener("click", (e) => { if (!e.target.closest(".acts")) closeMenu(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+
+  /* ---------- password reset ---------- */
+  let recovering = false;
+  $("btnForgot").onclick = async () => {
+    const email = $("a-email").value.trim();
+    if (!email) { say("authMsg", "Type your email above first, then tap Forgot password? again.", true); $("a-email").focus(); return; }
+    const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
+    say("authMsg", error ? friendly(error) : "If this email has an account, a reset link has been sent. Check your inbox.", !!error);
+  };
+  $("resetForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = $("btnResetSave");
+    busy(btn, true, "Saving…");
+    const { error } = await sb.auth.updateUser({ password: $("r-pass").value });
+    busy(btn, false);
+    if (error) { say("resetMsg", friendly(error), true); return; }
+    recovering = false;
+    e.target.reset();
+    show("home");
+    say("homeMsg", "Your password has been updated.");
+  });
+  $("fAbout").onclick = () => go("about");
+  $("aboutJoin").onclick = () => go(user ? "profile" : "signup");
+  $("aboutSearch").onclick = () => go("search");
+
+  /* ---------- nearby constellation ---------- */
+  const NS = "http://www.w3.org/2000/svg";
+  function svgEl(tag, attrs, ...kids) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in (attrs || {})) e.setAttribute(k, attrs[k]);
+    kids.forEach((x) => e.append(x));
+    return e;
+  }
+  const RING = [
+    { r: 70, color: "#5fe0cf", label: "Same university", max: 9, speed: 0.0012 },
+    { r: 110, color: "#8ec5ff", label: "Same city", max: 12, speed: -0.0009 },
+    { r: 148, color: "#ffd27a", label: "Same field", max: 14, speed: 0.0006 }
+  ];
+  const sameText = (a, b) => { a = (a || "").trim().toLowerCase(); b = (b || "").trim().toLowerCase(); return !!a && !!b && (a.includes(b) || b.includes(a)); };
+  function drawConstellation(people, ctx) {
+    const svg = $("const"), info = $("constInfo");
+    svg.replaceChildren();
+    cancelAnimationFrame(nearbyRaf);
+    svg.append(svgEl("defs", {},
+      svgEl("clipPath", { id: "cclip" }, svgEl("circle", { r: 15 })),
+      svgEl("linearGradient", { id: "cglow", x1: 0, y1: 0, x2: 1, y2: 1 }, svgEl("stop", { offset: 0, "stop-color": "#d8fff8" }), svgEl("stop", { offset: 1, "stop-color": "#8ec5ff" }))));
+    for (let i = 0; i < 36; i++) svg.append(svgEl("circle", { cx: (Math.random() * 360).toFixed(1), cy: (Math.random() * 360).toFixed(1), r: (Math.random() * 1.1 + 0.3).toFixed(2), fill: "#fff", opacity: (Math.random() * 0.5 + 0.15).toFixed(2) }));
+    RING.forEach((g) => svg.append(svgEl("circle", { cx: 180, cy: 180, r: g.r, fill: "none", stroke: g.color, "stroke-opacity": 0.3, "stroke-dasharray": "3 6" })));
+
+    const groups = [[], [], []];
+    people.forEach((p) => {
+      const ri = sameText(p.university, ctx.uni) ? 0 : sameText(p.city, ctx.city) ? 1 : sameText(p.specialty, ctx.spec) ? 2 : -1;
+      if (ri >= 0 && groups[ri].length < RING[ri].max) groups[ri].push(p);
+    });
+
+    const face = (g, p, color, rad) => {
+      g.append(svgEl("circle", { r: rad, fill: color }));
+      const u = p.avatar_url ? safeUrl(p.avatar_url) : null;
+      if (u) g.append(svgEl("image", { href: u, x: -rad, y: -rad, width: rad * 2, height: rad * 2, "clip-path": "url(#cclip)", preserveAspectRatio: "xMidYMid slice" }));
+      else { const t = svgEl("text", { "text-anchor": "middle", dy: ".35em", "font-size": Math.round(rad * 0.9), "font-weight": 700, fill: "#fff" }); t.textContent = ((p.full_name || "?").trim()[0] || "?").toUpperCase(); g.append(t); }
+    };
+
+    let selected = null, t = 0;
+    const nodes = [];
+    groups.forEach((list, ri) => list.forEach((p, j) => {
+      const g = svgEl("g", { class: "cn", tabindex: 0, role: "button", "aria-label": (p.full_name || "Researcher") + ", " + RING[ri].label.toLowerCase() });
+      g.append(svgEl("circle", { r: 19, fill: "none", stroke: p.open_to_collab ? "url(#cglow)" : "rgba(255,255,255,.25)", "stroke-width": p.open_to_collab ? 2.6 : 1 }));
+      face(g, p, RING[ri].color, 15);
+      const pick = () => { selected = g; info.replaceChildren(personCard(p), el("div", { className: "meta", textContent: RING[ri].label })); place(); };
+      g.addEventListener("click", pick);
+      g.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+      svg.append(g);
+      nodes.push({ g, ri, a0: (2 * Math.PI * j) / groups[ri].length + ri * 0.9 });
+    }));
+    function place() {
+      nodes.forEach((n) => {
+        const a = n.a0 + t * RING[n.ri].speed, x = 180 + RING[n.ri].r * Math.cos(a), y = 180 + RING[n.ri].r * Math.sin(a);
+        n.g.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${n.g === selected ? 1.3 : 1})`);
+      });
+    }
+
+    const me0 = svgEl("g", { transform: "translate(180 180)" });
+    me0.append(svgEl("circle", { r: 29, fill: "none", stroke: "url(#cglow)", "stroke-width": 3 }));
+    face(me0, me || {}, "#0e7c86", 24);
+    svg.append(me0);
+    const you = svgEl("text", { x: 180, y: 226, "text-anchor": "middle", "font-size": 11, fill: "#fff", opacity: 0.85 }); you.textContent = "You";
+    svg.append(you);
+
+    const total = nodes.length;
+    if (total) info.replaceChildren(el("div", { className: "meta", textContent: "Tap a researcher in the map, or swipe the cards below. " + total + (total === 1 ? " person" : " people") + " around you." }));
+    else info.replaceChildren(el("div", { className: "msg" }, "No one from your university, city or field has joined the directory yet. ", el("button", { className: "link", type: "button", textContent: "Invite your colleagues", onclick: () => $("btnInvite").click() })));
+    place();
+    if (total && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const loop = () => { if (!selected) { t += 1; place(); } nearbyRaf = requestAnimationFrame(loop); };
+      nearbyRaf = requestAnimationFrame(loop);
+    }
+  }
+  async function loadNearby() {
+    const box = $("nearby");
+    box.hidden = true;
+    if (!user) return;
+    if (!me) await loadMe();
+    if (!me) return;
+    const uni = (me.university || "").trim(), city = (me.city || "").trim(), spec = (me.specialty || "").trim();
+    if (!uni && !city && !spec) return;
+    const parts = [];
+    if (uni) parts.push(`university.ilike.%${sq(uni)}%`);
+    if (city) parts.push(`city.ilike.%${sq(city)}%`);
+    if (spec) parts.push(`specialty.ilike.%${sq(spec)}%`);
+    const { data, error } = await sb.from("profiles").select(PCOLS).eq("show_in_directory", true).neq("id", user.id).or(parts.join(",")).limit(40);
+    if (error || !$("v-home").classList.contains("on")) return;
+    box.hidden = false;
+    drawConstellation(data || [], { uni, city, spec });
+    $("strip").replaceChildren(...(data || []).map(personCard));
+  }
+
+  /* ---------- select lists ---------- */
+  const ROLES = ["Medical student", "Resident / intern", "Doctor", "Researcher", "Professor / lecturer", "Other health professional"];
+  const LEVELS = ["Undergraduate, years 1-2", "Undergraduate, years 3-4", "Undergraduate, final years", "Intern", "Resident", "Master's student", "PhD student", "Postdoctoral researcher", "Graduated / practicing"];
+  function fillSelect(id, arr, first) { $(id).replaceChildren(new Option(first, ""), ...arr.map((x) => new Option(x, x))); }
+  fillSelect("p-role", ROLES, "Choose..."); fillSelect("p-level", LEVELS, "Choose...");
+  fillSelect("pf-role", ROLES, "Any role"); fillSelect("pf-level", LEVELS, "Any level");
+  const CC = {};
+  try {
+    const dn = new Intl.DisplayNames(["en"], { type: "region" }), names = [];
+    for (let a = 65; a <= 90; a++) for (let b = 65; b <= 90; b++) { const c = String.fromCharCode(a, b), n = dn.of(c); if (n && n !== c && !/unknown/i.test(n)) { names.push(n); CC[n] = c; } }
+    names.sort();
+    $("countryList").replaceChildren(...names.map((n) => { const o = document.createElement("option"); o.value = n; return o; }));
+    $("p-country").replaceChildren(new Option("Choose...", ""), ...names.map((n) => new Option(n, n)));
+  } catch {}
+
+  /* ---------- start ---------- */
+  sb.auth.onAuthStateChange((ev, session) => {
+    user = session ? session.user : null;
+    renderNav();
+    setTimeout(() => loadMe().then(renderNav), 0);
+    if (ev === "PASSWORD_RECOVERY") { recovering = true; show("reset"); }
+  });
+  sb.auth.getSession().then(async ({ data }) => { user = data.session ? data.session.user : null; await loadMe(); renderNav(); if (!recovering) show("home"); });
+</script>
+</body>
+</html>
