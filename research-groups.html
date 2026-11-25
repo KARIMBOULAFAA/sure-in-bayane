@@ -1,0 +1,517 @@
+<!-- قسم مجموعات البحث - Sure In Bayane -->
+<section id="bayane-research-groups-section" class="bayane-groups-wrap" dir="rtl">
+  <style>
+    .bayane-groups-wrap {
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      background: #ffffff;
+      color: #0f172a;
+    }
+    .bayane-groups-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .bayane-badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      margin-bottom: 6px;
+    }
+    .bayane-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .bayane-groups-wrap select,
+    .bayane-groups-wrap input,
+    .bayane-groups-wrap textarea,
+    .bayane-groups-wrap button {
+      font-family: inherit;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+    }
+    .bayane-groups-wrap button {
+      cursor: pointer;
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+    .bayane-groups-wrap button.secondary {
+      background: #f8fafc;
+      color: #0f172a;
+      border-color: #cbd5e1;
+    }
+    .bayane-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .bayane-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .bayane-card h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+    }
+    .bayane-card p {
+      margin: 0;
+      font-size: 13px;
+      color: #475569;
+    }
+    .bayane-panel {
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 16px;
+      background: #ffffff;
+    }
+    .bayane-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .bayane-hidden {
+      display: none !important;
+    }
+    .bayane-form-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 16px;
+      background: #f8fafc;
+      display: grid;
+      gap: 10px;
+    }
+    .bayane-form-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .bayane-status {
+      font-size: 13px;
+      color: #334155;
+      margin-bottom: 12px;
+    }
+  </style>
+
+  <div class="bayane-groups-header">
+    <div>
+      <span class="bayane-badge">Private</span>
+      <h2>Sure In Bayane - Research Groups</h2>
+      <p id="bayane-active-group-subtitle">اختر أو أنشئ مجموعة بحثية للبدء.</p>
+    </div>
+
+    <div class="bayane-actions-row">
+      <select id="bayane-group-select" aria-label="اختيار المجموعة البحثية">
+        <option value="">-- اختر مجموعة --</option>
+      </select>
+      <button id="bayane-new-group-btn" type="button">+ مجموعة جديدة</button>
+    </div>
+  </div>
+
+  <div id="bayane-status-msg" class="bayane-status">جاري التحقق من الجلسة...</div>
+
+  <!-- إنشاء مجموعة جديدة -->
+  <form id="bayane-create-group-form" class="bayane-form-box bayane-hidden">
+    <h3>إنشاء مجموعة بحثية جديدة</h3>
+    <input id="bayane-group-title" type="text" placeholder="عنوان المجموعة البحثية" required />
+    <textarea id="bayane-group-desc" rows="2" placeholder="وصف مختصر لأهداف البحث"></textarea>
+    <div class="bayane-form-actions">
+      <button type="submit">حفظ المجموعة</button>
+      <button id="bayane-cancel-group-btn" type="button" class="secondary">إلغاء</button>
+    </div>
+  </form>
+
+  <!-- الأقسام الستة -->
+  <div class="bayane-grid">
+    <div class="bayane-card">
+      <div>
+        <h3>أعضاء بلا حد أقصى</h3>
+        <p>دعوة وقبول الأعضاء والأدوار دون حد عددي.</p>
+      </div>
+      <button type="button" class="bayane-feature-btn" data-tab="members">فتح القسم</button>
+    </div>
+
+    <div class="bayane-card">
+      <div>
+        <h3>نقاش علمي</h3>
+        <p>حوار بحثي منظم ومشاركات الأعضاء.</p>
+      </div>
+      <button type="button" class="bayane-feature-btn" data-tab="discussions">فتح القسم</button>
+    </div>
+
+    <div class="bayane-card">
+      <div>
+        <h3>ملفات مشتركة</h3>
+        <p>مشاركة المراجع والوثائق البحثية.</p>
+      </div>
+      <button type="button" class="bayane-feature-btn" data-tab="files">فتح القسم</button>
+    </div>
+
+    <div class="bayane-card">
+      <div>
+        <h3>اجتماعات</h3>
+        <p>جدولة الجلسات البحثية وملاحظاتها.</p>
+      </div>
+      <button type="button" class="bayane-feature-btn" data-tab="meetings">فتح القسم</button>
+    </div>
+
+    <div class="bayane-card">
+      <div>
+        <h3>مهام الفريق</h3>
+        <p>توزيع المهام وتتبع الإنجاز.</p>
+      </div>
+      <button type="button" class="bayane-feature-btn" data-tab="tasks">فتح القسم</button>
+    </div>
+
+    <div class="bayane-card">
+      <div>
+        <h3>سجل التعديلات</h3>
+        <p>تتبع الدعوات والقبول والتغييرات داخل المجموعة.</p>
+      </div>
+      <button type="button" class="bayane-feature-btn" data-tab="audit">فتح القسم</button>
+    </div>
+  </div>
+
+  <!-- لوحة عرض القسم النشط -->
+  <div id="bayane-active-panel" class="bayane-panel bayane-hidden">
+    <div class="bayane-panel-head">
+      <h3 id="bayane-panel-title">القسم</h3>
+      <button id="bayane-close-panel-btn" type="button" class="secondary">إغلاق</button>
+    </div>
+    <div id="bayane-panel-body"></div>
+  </div>
+</section>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+  const SUPABASE_URL = window.BAYANE_SUPABASE_URL || 'https://dysugrfetryiygkrrxcy.supabase.co';
+  const SUPABASE_ANON_KEY = window.BAYANE_SUPABASE_ANON_KEY || 'sb_publishable_1sFkhrREpdZjNiulfGFYSw_btI_QJCN';
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const state = {
+    user: null,
+    groups: [],
+    activeGroupId: null,
+    activeTab: null
+  };
+
+  const statusEl = document.getElementById('bayane-status-msg');
+  const groupSelectEl = document.getElementById('bayane-group-select');
+  const subtitleEl = document.getElementById('bayane-active-group-subtitle');
+  const createFormEl = document.getElementById('bayane-create-group-form');
+  const panelEl = document.getElementById('bayane-active-panel');
+  const panelTitleEl = document.getElementById('bayane-panel-title');
+  const panelBodyEl = document.getElementById('bayane-panel-body');
+
+  function setStatus(msg) {
+    statusEl.textContent = msg;
+  }
+
+  async function addAuditLog(groupId, action, details) {
+    if (!groupId || !state.user) return;
+    await supabase.from('group_audit_logs').insert({
+      group_id: groupId,
+      actor_id: state.user.id,
+      action,
+      details
+    });
+  }
+
+  function updateGroupHeader() {
+    const activeGroup = state.groups.find((g) => g.id === state.activeGroupId);
+    if (!activeGroup) {
+      subtitleEl.textContent = 'اختر أو أنشئ مجموعة بحثية للبدء.';
+      return;
+    }
+    subtitleEl.textContent = `المجموعة النشطة: ${activeGroup.title}${activeGroup.description ? ' — ' + activeGroup.description : ''}`;
+  }
+
+  async function loadGroups() {
+    const { data, error } = await supabase
+      .from('research_groups')
+      .select('id, title, description, created_at')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      setStatus('تعذر تحميل المجموعات البحثية. تأكد من تسجيل الدخول وسياسات RLS.');
+      return;
+    }
+
+    state.groups = data || [];
+    groupSelectEl.innerHTML = '<option value="">-- اختر مجموعة --</option>';
+
+    for (const g of state.groups) {
+      const opt = document.createElement('option');
+      opt.value = g.id;
+      opt.textContent = g.title;
+      groupSelectEl.appendChild(opt);
+    }
+
+    if (state.groups.length > 0 && !state.activeGroupId) {
+      state.activeGroupId = state.groups[0].id;
+    }
+
+    if (state.activeGroupId) {
+      groupSelectEl.value = state.activeGroupId;
+    }
+
+    updateGroupHeader();
+    setStatus(`تم الاتصال بنجاح (${state.groups.length} مجموعة متاحة).`);
+  }
+
+  async function renderTabContent(tab) {
+    state.activeTab = tab;
+    panelEl.classList.remove('bayane-hidden');
+
+    if (!state.activeGroupId) {
+      panelTitleEl.textContent = 'تنبيه';
+      panelBodyEl.innerHTML = '<p>يرجى اختيار أو إنشاء مجموعة بحثية أولاً.</p>';
+      return;
+    }
+
+    if (tab === 'members') {
+      panelTitleEl.textContent = 'أعضاء بلا حد أقصى (دعوة وقبول الأعضاء)';
+
+      const { data: members, error: membersErr } = await supabase
+        .from('research_group_members')
+        .select('id, user_id, role, status, profiles(id, full_name, email)')
+        .eq('group_id', state.activeGroupId)
+        .order('created_at', { ascending: true });
+
+      if (membersErr) {
+        panelBodyEl.innerHTML = '<p>تعذر جلب قائمة الأعضاء حالياً.</p>';
+        return;
+      }
+
+      const listHtml = (members || [])
+        .map((m) => {
+          const name = m.profiles?.full_name || m.profiles?.email || m.user_id;
+          const isPending = m.status === 'pending';
+          const badge = isPending ? 'دعوة معلّقة' : 'عضو نشط';
+          const acceptBtn = isPending
+            ? `<button type="button" class="bayane-accept-member-btn" data-member-id="${m.id}" data-user-id="${m.user_id}">قبول الدعوة</button>`
+            : '';
+
+          return `
+            <li style="margin-bottom:8px;">
+              <strong>${name}</strong> — الدور: <em>${m.role}</em> — الحالة: <span>${badge}</span>
+              ${acceptBtn}
+            </li>
+          `;
+        })
+        .join('');
+
+      panelBodyEl.innerHTML = `
+        <p>إجمالي الأعضاء والدعوات: <strong>${(members || []).length}</strong> (بدون حد أقصى)</p>
+        <ul>${listHtml || '<li>لا يوجد أعضاء بعد.</li>'}</ul>
+
+        <form id="bayane-invite-form" class="bayane-panel-head" style="flex-wrap:wrap; margin-top:14px;">
+          <input id="bayane-invite-query" type="text" placeholder="البريد الإلكتروني أو معرّف الباحث (UUID)" required style="flex:1; min-width:200px;" />
+          <select id="bayane-invite-role">
+            <option value="member">عضو (member)</option>
+            <option value="reviewer">مراجع (reviewer)</option>
+          </select>
+          <button type="submit">إرسال دعوة</button>
+        </form>
+      `;
+
+      panelBodyEl.querySelectorAll('.bayane-accept-member-btn').forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const memberId = btn.dataset.memberId;
+          const targetUserId = btn.dataset.userId;
+
+          const { error } = await supabase
+            .from('research_group_members')
+            .update({ status: 'accepted' })
+            .eq('id', memberId)
+            .eq('group_id', state.activeGroupId);
+
+          if (!error) {
+            await addAuditLog(state.activeGroupId, 'accept_member', `قبول عضوية المستخدم: ${targetUserId}`);
+            renderTabContent('members');
+          }
+        });
+      });
+
+      document.getElementById('bayane-invite-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const rawQuery = document.getElementById('bayane-invite-query').value.trim();
+        const role = document.getElementById('bayane-invite-role').value;
+        if (!rawQuery) return;
+
+        let { data: profile } = await supabase
+          .from('profiles')
+          .select('id, email, full_name')
+          .eq('id', rawQuery)
+          .maybeSingle();
+
+        if (!profile) {
+          const resByEmail = await supabase
+            .from('profiles')
+            .select('id, email, full_name')
+            .ilike('email', rawQuery)
+            .maybeSingle();
+          profile = resByEmail.data;
+        }
+
+        if (!profile) {
+          alert('لم يتم العثور على حساب باحث مطابق في جدول profiles.');
+          return;
+        }
+
+        const { error: inviteErr } = await supabase
+          .from('research_group_members')
+          .insert({
+            group_id: state.activeGroupId,
+            user_id: profile.id,
+            role,
+            status: 'pending',
+            invited_by: state.user.id
+          });
+
+        if (inviteErr) {
+          alert('تعذر إرسال الدعوة (قد يكون العضو مدعواً مسبقاً في المجموعة).');
+          return;
+        }
+
+        await addAuditLog(
+          state.activeGroupId,
+          'invite_member',
+          `دعوة ${profile.full_name || profile.email || profile.id} بدور ${role}`
+        );
+        renderTabContent('members');
+      });
+
+      return;
+    }
+
+    if (tab === 'audit') {
+      panelTitleEl.textContent = 'سجل التعديلات';
+      const { data: logs, error: logsErr } = await supabase
+        .from('group_audit_logs')
+        .select('id, action, details, created_at')
+        .eq('group_id', state.activeGroupId)
+        .order('created_at', { ascending: false })
+        .limit(30);
+
+      if (logsErr) {
+        panelBodyEl.innerHTML = '<p>تعذر تحميل سجل التعديلات.</p>';
+        return;
+      }
+
+      const items = (logs || [])
+        .map((row) => `<li><strong>${row.action}</strong> — ${row.details || ''} <small>(${new Date(row.created_at).toLocaleString('ar')})</small></li>`)
+        .join('');
+
+      panelBodyEl.innerHTML = `<ul>${items || '<li>لا توجد تعديلات مسجلة بعد.</li>'}</ul>`;
+      return;
+    }
+
+    panelTitleEl.textContent = `قسم: ${tab}`;
+    panelBodyEl.innerHTML = '<p>هذا القسم جاهز ويمكن ربطه بجدوله في Supabase.</p>';
+  }
+
+  async function initBayaneGroups() {
+    const { data: { session } } = await supabase.auth.getSession();
+    state.user = session?.user || null;
+
+    if (!state.user) {
+      setStatus('يرجى تسجيل الدخول بحساب الباحث أولاً لاستخدام مجموعات البحث.');
+      return;
+    }
+
+    await loadGroups();
+  }
+
+  document.getElementById('bayane-new-group-btn').addEventListener('click', () => {
+    createFormEl.classList.remove('bayane-hidden');
+  });
+
+  document.getElementById('bayane-cancel-group-btn').addEventListener('click', () => {
+    createFormEl.classList.add('bayane-hidden');
+    createFormEl.reset();
+  });
+
+  createFormEl.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!state.user) return;
+
+    const title = document.getElementById('bayane-group-title').value.trim();
+    const description = document.getElementById('bayane-group-desc').value.trim();
+    if (!title) return;
+
+    const { data: created, error } = await supabase
+      .from('research_groups')
+      .insert({
+        title,
+        description,
+        created_by: state.user.id
+      })
+      .select('id, title, description, created_at')
+      .single();
+
+    if (error) {
+      alert('تعذر إنشاء المجموعة البحثية.');
+      return;
+    }
+
+    await supabase.from('research_group_members').insert({
+      group_id: created.id,
+      user_id: state.user.id,
+      role: 'owner',
+      status: 'accepted',
+      invited_by: state.user.id
+    });
+
+    await addAuditLog(created.id, 'create_group', `إنشاء المجموعة: ${created.title}`);
+
+    state.activeGroupId = created.id;
+    createFormEl.reset();
+    createFormEl.classList.add('bayane-hidden');
+    await loadGroups();
+  });
+
+  groupSelectEl.addEventListener('change', (e) => {
+    state.activeGroupId = e.target.value || null;
+    updateGroupHeader();
+    if (state.activeTab) {
+      renderTabContent(state.activeTab);
+    }
+  });
+
+  document.querySelectorAll('.bayane-feature-btn').forEach((btn) => {
+    btn.addEventListener('click', () => renderTabContent(btn.dataset.tab));
+  });
+
+  document.getElementById('bayane-close-panel-btn').addEventListener('click', () => {
+    panelEl.classList.add('bayane-hidden');
+    state.activeTab = null;
+  });
+
+  initBayaneGroups();
+</script>
