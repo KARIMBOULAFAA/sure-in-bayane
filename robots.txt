@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
-
+Disallow: /admin.html
+Disallow: /research-groups.html
 Sitemap: https://karimboulafaa.github.io/sure-in-bayane/sitemap.xml
